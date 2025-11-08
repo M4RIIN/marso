@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+permissions:
+  contents: write        # <— indispensable pour git push
+  pull-requests: write   # (si tu crées/updates des PR)
+
 on:
   push:
     branches:
