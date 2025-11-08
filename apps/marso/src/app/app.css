@@ -6,6 +6,10 @@
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+.rounded{
+  border-radius: 18px;
+  }
+
 .hero {
   position: relative;
   display: grid;
