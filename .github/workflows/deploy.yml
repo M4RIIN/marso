@@ -26,7 +26,8 @@ jobs:
       run: npm install
 
     - name: Build the project
-      run: npx nx build marso
+      run: npx nx build marso --base-href=/marso/
+
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
