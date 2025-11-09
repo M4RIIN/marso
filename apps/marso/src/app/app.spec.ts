@@ -1,20 +1,29 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { App } from './app';
-import { NxWelcome } from './nx-welcome';
+import { NameService } from './services/name.service';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App, NxWelcome],
+      imports: [App],
+      providers: [
+        {
+          provide: NameService,
+          useValue: {
+            name$: of('Alexandre'),
+          },
+        },
+      ],
     }).compileComponents();
   });
 
-  it('should render title', () => {
+  it('should render the hero name from the API response', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome marso'
+    expect(compiled.querySelector('.hero__content h1')?.textContent).toContain(
+      'Alexandre'
     );
   });
 });

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { AutoplayOnVisibleDirective } from './directives/autoplay-on-visible.directive';
+import { NameService } from './services/name.service';
 
 interface Project {
   title: string;
@@ -18,6 +20,11 @@ interface Project {
   styleUrl: './app.css',
 })
 export class App {
+  private readonly nameService = inject(NameService);
+  protected readonly heroName = toSignal(this.nameService.name$, {
+    initialValue: 'Alexandre',
+  });
+
   protected readonly projects: Project[] = [
     {
       title: 'Nom du projet 1',

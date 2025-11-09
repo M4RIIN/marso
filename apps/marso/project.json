@@ -5,6 +5,7 @@
   "prefix": "app",
   "sourceRoot": "apps/marso/src",
   "tags": [],
+  "implicitDependencies": ["api"],
   "targets": {
     "build": {
       "executor": "@angular/build:application",
@@ -51,7 +52,30 @@
       },
       "defaultConfiguration": "production"
     },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run marso:build:production",
+          "node tools/scripts/package-fullstack.mjs"
+        ]
+      }
+    },
     "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": true,
+        "commands": [
+          {
+            "command": "nx run api:serve"
+          },
+          {
+            "command": "nx run marso:serve-frontend"
+          }
+        ]
+      }
+    },
+    "serve-frontend": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
       "configurations": {
@@ -59,7 +83,8 @@
           "buildTarget": "marso:build:production"
         },
         "development": {
-          "buildTarget": "marso:build:development"
+          "buildTarget": "marso:build:development",
+          "proxyConfig": "apps/marso/proxy.conf.json"
         }
       },
       "defaultConfiguration": "development"
