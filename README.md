@@ -14,9 +14,11 @@ Content goes here...
 - Balises meta enrichies (title, description, keywords) + Open Graph/Twitter Cards et balisage `Person` JSON-LD pour ancrer le site autour d’Alexandre Marsollier.
 - Contenu éditorial retravaillé (hero, expertises, projets, FAQ, snippet SEO) avec mots-clés principaux, structure de titres hiérarchique et éléments accessibles.
 - Données projets réalistes (rôles, secteurs, tags) qui renforcent la pertinence sémantique et la longue traîne.
+- Nouvelle route `/monteur-video` (SPA) avec page dédiée au mot-clé “monteur video” : prestations détaillées, workflow, packs/tarifs, CTA vers Malt et maquette de FAQ.
 
 ### À suivre pour maintenir le SEO
 - Mettre à jour régulièrement les projets et témoignages en intégrant « Alexandre Marsollier » et les expertises clés dans les descriptions.
 - Ajouter/actualiser les visuels d’aperçu (poster vidéo, images OG) pour aligner l’expérience sociale avec le contenu.
 - Surveiller les Core Web Vitals (chargement vidéo, poids des médias) et compresser les assets.
 - Continuer d’enrichir la FAQ ou les articles de blog avec des questions clients, puis vérifier l’indexation via la Search Console.
+- Compléter les sections `/monteur-video` (packs, études de cas, avis Malt) afin de signaler à Google un contenu frais orienté “monteur video freelance”.
