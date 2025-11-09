@@ -20,28 +20,28 @@ interface Project {
 export class App {
   protected readonly projects: Project[] = [
     {
-      title: 'Nom du projet 1',
-      role: 'Réalisateur',
+      title: 'Sillage — Maison Dumesnil',
+      role: 'Alexandre Marsollier · Réalisateur & Motion designer',
       year: '2024',
       description:
-        'Pitch du projet en une ou deux phrases pour raconter le contexte et ton rôle principal.',
-      tags: ['Publicité', '4K', 'Client A'],
+        'Film manifeste pour la collection parfum Sillage. Direction artistique, tournage sur Alexa Mini LF et animations typographiques génératives.',
+      tags: ['Luxe', '4K HDR', 'Narration sensorielle'],
     },
     {
-      title: 'Nom du projet 2',
-      role: 'Chef opérateur',
+      title: 'Orbital Stories — CosmoTech',
+      role: 'Alexandre Marsollier · Directeur de création',
       year: '2023',
       description:
-        'Explique ici les objectifs du projet et les défis créatifs ou techniques que tu as relevés.',
-      tags: ['Documentaire', 'Lumière naturelle'],
+        "Série documentaire qui vulgarise l'industrie spatiale française. Mix entre interviews cinéma et motion design data-driven.",
+      tags: ['Documentaire', 'Data storytelling', 'Scientifique'],
     },
     {
-      title: 'Nom du projet 3',
-      role: 'Motion designer',
+      title: 'Pulse UI — Nova Health',
+      role: 'Alexandre Marsollier · Motion lead',
       year: '2022',
       description:
-        'Ajoute un aperçu rapide des éléments graphiques, du style et de l’histoire racontée.',
-      tags: ['Animation 2D', 'After Effects', 'Festival'],
+        'Système d’identité animé pour l’application Pulse UI. Design system, micro-interactions et livraison multi-plateforme.',
+      tags: ['Produit digital', 'After Effects', 'Design system'],
     },
   ];
 }
