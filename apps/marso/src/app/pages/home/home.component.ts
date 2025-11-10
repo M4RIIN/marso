@@ -25,7 +25,7 @@ export class HomeComponent {
       role: 'Alexandre Marsollier · Réalisateur & Motion designer',
       year: '2024',
       description:
-        'Film manifeste pour la collection parfum Sillage. Direction artistique, tournage sur Alexa Mini LF et animations typographiques génératives.',
+        'Film manifeste pour la collection parfum Sillage. Montage vidéo premium, direction artistique, tournage sur Alexa Mini LF et animations typographiques génératives.',
       tags: ['Luxe', '4K HDR', 'Narration sensorielle'],
     },
     {
@@ -33,7 +33,7 @@ export class HomeComponent {
       role: 'Alexandre Marsollier · Directeur de création',
       year: '2023',
       description:
-        "Série documentaire qui vulgarise l'industrie spatiale française. Mix entre interviews cinéma et motion design data-driven.",
+        "Série documentaire qui vulgarise l'industrie spatiale française. Montage vidéo documentaire, mix entre interviews cinéma et motion design data-driven.",
       tags: ['Documentaire', 'Data storytelling', 'Scientifique'],
     },
     {
@@ -41,7 +41,7 @@ export class HomeComponent {
       role: 'Alexandre Marsollier · Motion lead',
       year: '2022',
       description:
-        'Système d’identité animé pour l’application Pulse UI. Design system, micro-interactions et livraison multi-plateforme.',
+        'Système d’identité animé pour l’application Pulse UI. Montage des démonstrations produit, design system, micro-interactions et livraison multi-plateforme.',
       tags: ['Produit digital', 'After Effects', 'Design system'],
     },
   ];

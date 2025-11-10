@@ -158,6 +158,29 @@
   color: rgba(94, 234, 212, 0.8);
 }
 
+.mv-highlight {
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  border-radius: 32px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.mv-highlight__list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mv-highlight__list li {
+  padding: 0.85rem 1.3rem;
+  border-radius: 18px;
+  border: 1px dashed rgba(94, 234, 212, 0.5);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
 .mv-skills {
   display: flex;
   flex-wrap: wrap;
