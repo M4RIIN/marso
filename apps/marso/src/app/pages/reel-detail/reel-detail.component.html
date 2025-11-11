@@ -1,0 +1,26 @@
+<section class="reel-detail" *ngIf="reel as project; else loading">
+  <app-nine-sixteen-hero [reel]="project"></app-nine-sixteen-hero>
+
+  <div class="reel-detail__content">
+    <div class="reel-detail__grid">
+      <article>
+        <h2>Contexte</h2>
+        <p>{{ project.context }}</p>
+      </article>
+      <article>
+        <h2>Contributions</h2>
+        <ul>
+          <li *ngFor="let contribution of project.contributions">{{ contribution }}</li>
+        </ul>
+      </article>
+    </div>
+
+    <a class="reel-detail__back" routerLink="/">← Retour aux projets</a>
+  </div>
+</section>
+
+<ng-template #loading>
+  <div class="reel-detail__loading">
+    Chargement du projet…
+  </div>
+</ng-template>

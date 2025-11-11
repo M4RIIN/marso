@@ -125,12 +125,13 @@
     </header>
 
     <div class="reels-grid" role="list">
-      <article
+      <a
         class="reel-card"
         *ngFor="let reel of reels"
         role="listitem"
         [style.--reel-accent]="reel.accent"
         aria-label="Reel {{ reel.client }} - {{ reel.title }}"
+        [routerLink]="['/projets', reel.slug]"
       >
         <div class="reel-card__header">
           <span class="reel-card__format">{{ reel.format }} · {{ reel.location }}</span>
@@ -164,7 +165,7 @@
             <li *ngFor="let tag of reel.tags">{{ tag }}</li>
           </ul>
         </div>
-      </article>
+      </a>
     </div>
   </section>
 
