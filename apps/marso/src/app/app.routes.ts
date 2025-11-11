@@ -6,12 +6,12 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Alexandre Marsollier · Réalisateur, motion designer & monteur vidéo',
+    title: 'Je suis Alexandre Marsollier · Réalisateur, motion designer & monteur vidéo',
   },
   {
     path: 'monteur-video',
     component: MonteurVideoComponent,
-    title: 'Monteur vidéo freelance à Toulouse — Alexandre Marsollier',
+    title: 'Monteur vidéo freelance à Toulouse — Je suis Alexandre Marsollier',
   },
   { path: '**', redirectTo: '' },
 ];

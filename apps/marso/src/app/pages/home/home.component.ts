@@ -22,7 +22,7 @@ export class HomeComponent {
   protected readonly projects: Project[] = [
     {
       title: 'Sillage — Maison Dumesnil',
-      role: 'Alexandre Marsollier · Réalisateur & Motion designer',
+      role: 'Je signe la réalisation & le motion design',
       year: '2024',
       description:
         'Film manifeste pour la collection parfum Sillage. Montage vidéo premium, direction artistique, tournage sur Alexa Mini LF et animations typographiques génératives.',
@@ -30,7 +30,7 @@ export class HomeComponent {
     },
     {
       title: 'Orbital Stories — CosmoTech',
-      role: 'Alexandre Marsollier · Directeur de création',
+      role: 'Je prends la direction de création',
       year: '2023',
       description:
         "Série documentaire qui vulgarise l'industrie spatiale française. Montage vidéo documentaire, mix entre interviews cinéma et motion design data-driven.",
@@ -38,7 +38,7 @@ export class HomeComponent {
     },
     {
       title: 'Pulse UI — Nova Health',
-      role: 'Alexandre Marsollier · Motion lead',
+      role: 'Je pilote le motion design',
       year: '2022',
       description:
         'Système d’identité animé pour l’application Pulse UI. Montage des démonstrations produit, design system, micro-interactions et livraison multi-plateforme.',
