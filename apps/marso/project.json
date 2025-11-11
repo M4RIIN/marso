@@ -18,6 +18,11 @@
           {
             "glob": "**/*",
             "input": "apps/marso/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/marso/src/assets",
+            "output": "assets"
           }
         ],
         "styles": ["apps/marso/src/styles.css"],
