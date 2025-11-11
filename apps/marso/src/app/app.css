@@ -10,6 +10,21 @@
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   z-index: 10;
+  transition:
+    padding 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.site-header--compact {
+  padding: 0.5rem 5vw;
+  gap: 0.75rem;
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(18px);
+  border-color: rgba(148, 163, 184, 0.3);
+  transform: translateY(-85%);
+  opacity: 0.2;
 }
 
 .site-logo {
@@ -18,6 +33,11 @@
   letter-spacing: 0.2em;
   text-decoration: none;
   color: inherit;
+  transition: letter-spacing 0.25s ease;
+}
+
+.site-header--compact .site-logo {
+  letter-spacing: 0.12em;
 }
 
 .site-nav {
@@ -31,7 +51,14 @@
   color: rgba(248, 250, 252, 0.7);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    padding 0.2s ease;
+}
+
+.site-header--compact .site-nav a {
+  padding: 0.25rem 0.65rem;
 }
 
 .site-nav a.is-active,
@@ -46,10 +73,18 @@
   border-radius: 999px;
   border: 1px solid rgba(94, 234, 212, 0.4);
   color: rgba(94, 234, 212, 0.95);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    padding 0.2s ease;
 }
 
 .header-cta:hover {
   background: rgba(94, 234, 212, 0.12);
+}
+
+.site-header--compact .header-cta {
+  padding: 0.45rem 1.15rem;
 }
 
 .site-footer {
