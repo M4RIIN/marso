@@ -23,7 +23,7 @@ export class App {
     { label: 'Monteur vidéo', path: '/monteur-video' },
   ];
   protected readonly currentYear = new Date().getFullYear();
-  protected isHeaderCompact = false;
+  protected isHeaderHidden = false;
 
   @HostListener('window:scroll', [])
   protected handleWindowScroll(): void {
@@ -32,12 +32,14 @@ export class App {
     }
 
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-    const isScrollingDown = scrollTop > this.lastScrollTop;
+    const delta = scrollTop - this.lastScrollTop;
+    const isScrollingDown = delta > 2;
+    const isScrollingUp = delta < -2;
 
     if (isScrollingDown && scrollTop > this.scrollThreshold) {
-      this.isHeaderCompact = true;
-    } else if (!isScrollingDown || scrollTop <= this.scrollThreshold) {
-      this.isHeaderCompact = false;
+      this.isHeaderHidden = true;
+    } else if (isScrollingUp || scrollTop <= this.scrollThreshold) {
+      this.isHeaderHidden = false;
     }
 
     this.lastScrollTop = Math.max(scrollTop, 0);
