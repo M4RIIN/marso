@@ -1,91 +1,121 @@
-<div class="hero" aria-label="Ma présentation de réalisateur et monteur vidéo">
+<section class="reel-hero" aria-label="Ma présentation de réalisateur et monteur vidéo">
+  <div class="reel-hero__filmstrip" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <video
-    class="hero__video"
+    class="reel-hero__video"
     autoplay
     muted
     loop
     playsinline
     poster="https://m4riin.github.io/marso/og-cover.jpg"
   >
-    <source
-      src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-      type="video/mp4"
-    />
+    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
     Votre navigateur ne supporte pas encore la vidéo HTML5.
   </video>
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <span class="hero__eyebrow">Monteur vidéo freelance à Toulouse</span>
-    <h1>Monteur vidéo &amp; Réalisateur </h1>
-    <p class="hero__subtitle">
-      Je conçois des films de marque, des documentaires et des identités animées pour des marques exigeantes.
-    </p>
+
+  <div class="reel-hero__overlay" aria-hidden="true"></div>
+  <div class="reel-hero__grain" aria-hidden="true"></div>
+
+  <div class="reel-hero__inner">
+    <div class="hero-pill">
+      <span>designer</span>
+      <span>editor</span>
+    </div>
+
+    <div class="reel-hero__title-block">
+      <p class="hero__eyebrow">Monteur vidéo freelance à Toulouse</p>
+      <h1>
+        <span>Monteur vidéo &amp; Réalisateur</span>
+        <span class="hero__script" aria-hidden="true">Portfolio</span>
+      </h1>
+      <p class="hero__subtitle">
+        Je conçois des films de marque, des documentaires et des identités animées pour des marques exigeantes.
+      </p>
+    </div>
+
     <ul class="hero__highlights">
       <li>Direction artistique &amp; narration filmique pour marques premium</li>
       <li>Montage vidéo freelance, colorimétrie et motion design sur-mesure</li>
       <li>Production agile en France et pour les entreprises toulousaines</li>
       <li>Freelance vérifié sur Malt pour sécuriser budget et planning</li>
     </ul>
-    <a class="hero__cta" href="#projets" aria-label="Voir mes projets">
-      Découvrir mes projets
-    </a>
-  </div>
-</div>
 
-<main class="content">
-  <section class="local-seo" id="monteur-video-toulouse">
-    <div>
+    <div class="hero__actions">
+      <a class="hero__cta" href="#projets" aria-label="Voir mes projets">Découvrir mes projets</a>
+      <p class="hero__caption">Réponse sous 24h — Disponible missions France &amp; remote</p>
+    </div>
+  </div>
+
+  <p class="reel-hero__vertical" aria-hidden="true">/resume /curriculum vitae</p>
+</section>
+
+<main class="page">
+  <section class="section local-seo" id="monteur-video-toulouse">
+    <div class="section__header">
+      <p class="section__eyebrow">Toulouse &amp; Remote</p>
       <h2>Monteur vidéo Toulouse : expertise locale &amp; missions remote</h2>
+    </div>
+    <div class="section__body">
       <p>
         Basé à Toulouse et disponible en télétravail, je prends en charge les montages vidéo des entreprises tech, luxe,
         culture et agences. Je peux rejoindre votre salle de montage toulousaine ou collaborer depuis mon studio avec des
         outils comme Frame.io et Notion.
       </p>
+      <ul class="chip-list">
+        <li>Prise en charge des tournages locaux &amp; derush</li>
+        <li>Conseil SEO vidéo pour YouTube, Instagram &amp; LinkedIn</li>
+        <li>Livraison rapide pour campagnes social ads toulousaines</li>
+      </ul>
     </div>
-    <ul>
-      <li>Prise en charge des tournages locaux &amp; derush</li>
-      <li>Conseil SEO vidéo pour YouTube, Instagram &amp; LinkedIn</li>
-      <li>Livraison rapide pour campagnes social ads toulousaines</li>
-    </ul>
   </section>
 
-  <section class="services" id="expertises">
-    <header>
+  <section class="section services" id="expertises">
+    <header class="section__header">
+      <p class="section__eyebrow">Expertises</p>
       <h2>Expertises d'un monteur vidéo freelance senior</h2>
       <p>
-        Chaque projet commence par une immersion dans votre ADN pour traduire vos messages en images
-        mémorables. De la première intention créative à la diffusion, je pilote le montage vidéo, le motion design et les
-        contenus sociaux avec une méthode claire, collaborative et data-informed.
+        Chaque projet commence par une immersion dans votre ADN pour traduire vos messages en images mémorables. De la
+        première intention créative à la diffusion, je pilote le montage vidéo, le motion design et les contenus sociaux
+        avec une méthode claire, collaborative et data-informed.
       </p>
     </header>
 
-    <div class="services__grid">
+    <div class="cards-grid">
       <article class="service-card">
+        <div class="service-card__badge">01</div>
         <h3>Storytelling stratégique</h3>
         <p>
-          Positionnement de marque, manifesto vidéo et campagnes publicitaires qui alignent narration
-          émotionnelle et objectifs business.
+          Positionnement de marque, manifesto vidéo et campagnes publicitaires qui alignent narration émotionnelle et
+          objectifs business.
         </p>
       </article>
       <article class="service-card">
+        <div class="service-card__badge">02</div>
         <h3>Motion design signature</h3>
         <p>
-          Identités animées, UI motion et génériques premium conçus sur After Effects, Cinema 4D et
-          Unreal Engine pour une esthétique ultra fluide.
+          Identités animées, UI motion et génériques premium conçus sur After Effects, Cinema 4D et Unreal Engine pour
+          une esthétique ultra fluide.
         </p>
       </article>
       <article class="service-card">
+        <div class="service-card__badge">03</div>
         <h3>Production agile</h3>
         <p>
-          Coordination d'équipes spécialisées, tournage multi-caméras, supervision VFX et livraison
-          optimisée pour TV, social et installations immersives.
+          Coordination d'équipes spécialisées, tournage multi-caméras, supervision VFX et livraison optimisée pour TV,
+          social et installations immersives.
         </p>
       </article>
     </div>
   </section>
 
-  <section class="projects" id="projets">
-    <header class="projects__header">
+  <section class="section projects" id="projets">
+    <header class="section__header">
+      <p class="section__eyebrow">Sélection</p>
       <h2>Sélection de projets que j'ai montés en freelance</h2>
       <p>
         Chaque étude associe montage vidéo, recherche visuelle, direction photo et motion design pour créer des pièces
@@ -96,21 +126,17 @@
     <div class="projects__list">
       <article class="project-card" *ngFor="let project of projects">
         <div class="project-card__media">
-          <video class="hero__video rounded" autoplay muted loop playsinline>
-            <source
-              src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              type="video/mp4"
-            />
+          <video class="project-card__video" autoplay muted loop playsinline>
+            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas encore la vidéo HTML5.
           </video>
+          <span class="project-card__stamp">{{ project.year }}</span>
         </div>
 
         <div class="project-card__body">
           <header class="project-card__header">
             <h3>{{ project.title }}</h3>
-            <p class="project-card__meta">
-              {{ project.role }} · {{ project.year }}
-            </p>
+            <p class="project-card__meta">{{ project.role }} · {{ project.year }}</p>
           </header>
 
           <p class="project-card__description">{{ project.description }}</p>
@@ -128,8 +154,9 @@
     </div>
   </section>
 
-  <section class="about" id="a-propos">
-    <header>
+  <section class="section about" id="a-propos">
+    <header class="section__header">
+      <p class="section__eyebrow">À propos</p>
       <h2>À propos</h2>
     </header>
     <p>
@@ -140,7 +167,8 @@
     </p>
   </section>
 
-  <section class="monteur-cta">
+  <section class="section monteur-cta">
+    <p class="section__eyebrow">Offre dédiée</p>
     <h2>Besoin d'un monteur video freelance à Toulouse&nbsp;?</h2>
     <p>
       Je propose une page dédiée détaillant mon approche montage, mes packs et mon workflow. Vous y trouverez les tarifs
@@ -150,8 +178,11 @@
     <a class="hero__cta" routerLink="/monteur-video">Découvrir la page monteur vidéo</a>
   </section>
 
-  <section class="seo-snippet" aria-label="Message clé pour les moteurs de recherche">
-    <h2>Pourquoi travailler avec moi&nbsp;?</h2>
+  <section class="section seo-snippet" aria-label="Message clé pour les moteurs de recherche">
+    <div class="section__header">
+      <p class="section__eyebrow">Signature</p>
+      <h2>Pourquoi travailler avec moi&nbsp;?</h2>
+    </div>
     <p>
       Parce que je connecte rigueur stratégique et sensibilité artistique pour défendre votre image. Je mêle veille des
       tendances, data storytelling, capture haut de gamme et motion design pour renforcer votre notoriété sur Google,
@@ -159,14 +190,17 @@
     </p>
   </section>
 
-  <section class="faq" id="faq">
-    <h2>Questions fréquentes</h2>
+  <section class="section faq" id="faq">
+    <div class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2>Questions fréquentes</h2>
+    </div>
     <dl>
       <div>
         <dt>Quel est mon délai moyen pour un projet de montage vidéo freelance&nbsp;?</dt>
         <dd>
-          Entre 4 et 8 semaines selon la complexité (pré-production, tournage, post-production et
-          livraison multi-formats).
+          Entre 4 et 8 semaines selon la complexité (pré-production, tournage, post-production et livraison
+          multi-formats).
         </dd>
       </div>
       <div>
@@ -179,15 +213,18 @@
       <div>
         <dt>Pouvez-vous intégrer des données produit ou techniques&nbsp;?</dt>
         <dd>
-          Absolument. Mon background en motion design me permet de vulgariser des sujets complexes tout en
-          conservant une direction artistique premium.
+          Absolument. Mon background en motion design me permet de vulgariser des sujets complexes tout en conservant une
+          direction artistique premium.
         </dd>
       </div>
     </dl>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
+  <section class="section contact" id="contact">
+    <div class="section__header">
+      <p class="section__eyebrow">Contact direct</p>
+      <h2>Contact</h2>
+    </div>
     <p>
       Écrivez-moi pour discuter d'un film de marque, d'une série documentaire ou d'une identité motion design, et je vous
       accompagne de bout en bout comme monteur vidéo freelance toulousain.
