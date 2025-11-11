@@ -125,20 +125,23 @@
     </header>
 
     <div class="reels-grid" role="list">
-      <a
+      <article
         class="reel-card"
         *ngFor="let reel of reels"
         role="listitem"
         [style.--reel-accent]="reel.accent"
         aria-label="Reel {{ reel.client }} - {{ reel.title }}"
-        [routerLink]="['/projets', reel.slug]"
       >
         <div class="reel-card__header">
           <span class="reel-card__format">{{ reel.format }} · {{ reel.location }}</span>
           <span class="reel-card__year">{{ reel.year }}</span>
         </div>
 
-        <div class="reel-card__film">
+        <a
+          class="reel-card__film"
+          [routerLink]="['/projets', reel.slug]"
+          aria-label="Voir le détail du reel {{ reel.client }} - {{ reel.title }}"
+        >
           <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
           <div class="reel-card__video-shell">
             <video
@@ -155,7 +158,7 @@
             </video>
           </div>
           <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
-        </div>
+        </a>
 
         <div class="reel-card__body">
           <p class="reel-card__client">{{ reel.client }}</p>
@@ -164,8 +167,17 @@
           <ul class="reel-card__tags">
             <li *ngFor="let tag of reel.tags">{{ tag }}</li>
           </ul>
+          <div class="reel-card__actions">
+            <button
+              type="button"
+              class="reel-card__details"
+              [routerLink]="['/projets', reel.slug]"
+            >
+              Détails
+            </button>
+          </div>
         </div>
-      </a>
+      </article>
     </div>
   </section>
 
