@@ -1,21 +1,58 @@
-<section class="reel-detail" *ngIf="reel as project; else loading">
-  <app-nine-sixteen-hero [reel]="project"></app-nine-sixteen-hero>
+<section class="reel-detail" *ngIf="reel as project; else loading" [style.--reel-accent]="project.accent">
+  <div class="reel-detail__layout">
+    <div class="reel-detail__media">
+      <div class="reel-detail__filmstrip" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <div class="reel-detail__content">
-    <div class="reel-detail__grid">
-      <article>
-        <h2>Contexte</h2>
-        <p>{{ project.context }}</p>
-      </article>
-      <article>
-        <h2>Contributions</h2>
-        <ul>
-          <li *ngFor="let contribution of project.contributions">{{ contribution }}</li>
-        </ul>
-      </article>
+      <div class="reel-detail__video-shell">
+        <video
+          #detailVideo
+          class="reel-detail__video"
+          controls
+          preload="metadata"
+          playsinline
+          autoplay
+          muted
+        >
+          <source [src]="'assets/media/' + project.videoSrc" type="video/mp4" />
+          Votre navigateur ne supporte pas encore la vidéo HTML5.
+        </video>
+      </div>
     </div>
 
-    <a class="reel-detail__back" routerLink="/">← Retour aux projets</a>
+    <div class="reel-detail__body">
+      <header class="reel-detail__header">
+        <p class="reel-detail__eyebrow">
+          {{ project.format }} · {{ project.location }} · {{ project.year }}
+        </p>
+        <h1>{{ project.title }}</h1>
+        <p class="reel-detail__client">{{ project.client }}</p>
+        <p class="reel-detail__summary">{{ project.summary }}</p>
+
+        <div class="reel-detail__tags">
+          <span *ngFor="let tag of project.tags">{{ tag }}</span>
+        </div>
+      </header>
+
+      <div class="reel-detail__grid">
+        <article>
+          <h2>Contexte</h2>
+          <p>{{ project.context }}</p>
+        </article>
+        <article>
+          <h2>Contributions</h2>
+          <ul>
+            <li *ngFor="let contribution of project.contributions">{{ contribution }}</li>
+          </ul>
+        </article>
+      </div>
+
+      <a class="reel-detail__back" routerLink="/">← Retour aux projets</a>
+    </div>
   </div>
 </section>
 
