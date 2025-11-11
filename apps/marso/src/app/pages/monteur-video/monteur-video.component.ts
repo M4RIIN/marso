@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AutoplayOnVisibleDirective } from '../../directives/autoplay-on-visible.directive';
 
 interface Service {
   title: string;
@@ -21,7 +22,7 @@ interface Faq {
 @Component({
   selector: 'app-monteur-video',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, AutoplayOnVisibleDirective],
   templateUrl: './monteur-video.component.html',
   styleUrl: './monteur-video.component.css',
 })
