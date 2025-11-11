@@ -124,32 +124,45 @@
       </p>
     </header>
 
-    <div class="projects__list">
-      <article class="project-card" *ngFor="let project of projects">
-        <div class="project-card__media">
-          <video class="project-card__video" autoplay muted loop playsinline appAutoplayOnVisible>
-            <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-            Votre navigateur ne supporte pas encore la vidéo HTML5.
-          </video>
-          <span class="project-card__stamp">{{ project.year }}</span>
+    <div class="reels-grid" role="list">
+      <article
+        class="reel-card"
+        *ngFor="let reel of reels"
+        role="listitem"
+        [style.--reel-accent]="reel.accent"
+        aria-label="Reel {{ reel.client }} - {{ reel.title }}"
+      >
+        <div class="reel-card__header">
+          <span class="reel-card__format">{{ reel.format }} · {{ reel.location }}</span>
+          <span class="reel-card__year">{{ reel.year }}</span>
         </div>
 
-        <div class="project-card__body">
-          <header class="project-card__header">
-            <h3>{{ project.title }}</h3>
-            <p class="project-card__meta">{{ project.role }} · {{ project.year }}</p>
-          </header>
-
-          <p class="project-card__description">{{ project.description }}</p>
-
-          <ul class="project-card__tags">
-            <li *ngFor="let tag of project.tags">{{ tag }}</li>
-          </ul>
-
-          <div class="project-card__actions">
-            <span class="project-card__link project-card__link--disabled">Lien vidéo</span>
-            <span class="project-card__link project-card__link--disabled">Étude de cas</span>
+        <div class="reel-card__film">
+          <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
+          <div class="reel-card__video-shell">
+            <video
+              class="reel-card__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              appAutoplayOnVisible
+              [attr.title]="reel.title + ' — ' + reel.client"
+            >
+              <source [src]="'assets/media/' + reel.videoSrc" type="video/mp4" />
+              Votre navigateur ne supporte pas encore la vidéo HTML5.
+            </video>
           </div>
+          <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
+        </div>
+
+        <div class="reel-card__body">
+          <p class="reel-card__client">{{ reel.client }}</p>
+          <h3>{{ reel.title }}</h3>
+          <p class="reel-card__role">{{ reel.role }}</p>
+          <ul class="reel-card__tags">
+            <li *ngFor="let tag of reel.tags">{{ tag }}</li>
+          </ul>
         </div>
       </article>
     </div>

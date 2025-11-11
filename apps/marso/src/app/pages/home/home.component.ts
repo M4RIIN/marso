@@ -3,12 +3,16 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AutoplayOnVisibleDirective } from '../../directives/autoplay-on-visible.directive';
 
-interface Project {
+interface ReelProject {
   title: string;
+  client: string;
   role: string;
   year: string;
-  description: string;
+  location: string;
+  format: string;
+  videoSrc: string;
   tags: string[];
+  accent: string;
 }
 
 @Component({
@@ -19,30 +23,61 @@ interface Project {
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  protected readonly projects: Project[] = [
+  protected readonly reels: ReelProject[] = [
     {
-      title: 'Sillage — Maison Dumesnil',
-      role: 'Je signe la réalisation & le motion design',
+      title: 'Capsule Club',
+      client: 'PLK',
+      role: 'Direction montage & textures analogiques',
       year: '2024',
-      description:
-        'Film manifeste pour la collection parfum Sillage. Montage vidéo premium, direction artistique, tournage sur Alexa Mini LF et animations typographiques génératives.',
-      tags: ['Luxe', '4K HDR', 'Narration sensorielle'],
+      location: 'Paris',
+      format: 'Reel 9:16',
+      videoSrc: 'PLK.mp4',
+      tags: ['Musique', 'Grain 16mm', 'Cut nerveux'],
+      accent: '#f7c740',
     },
     {
-      title: 'Orbital Stories — CosmoTech',
-      role: 'Je prends la direction de création',
+      title: 'STON Festival',
+      client: 'OFS Studio',
+      role: 'Réalisateur & monteur documentaire',
       year: '2023',
-      description:
-        "Série documentaire qui vulgarise l'industrie spatiale française. Montage vidéo documentaire, mix entre interviews cinéma et motion design data-driven.",
-      tags: ['Documentaire', 'Data storytelling', 'Scientifique'],
+      location: 'Marseille',
+      format: 'Reel 9:16',
+      videoSrc: 'REEL_OFS_ston.mp4',
+      tags: ['Culture', 'Super 8', 'Color grading teal'],
+      accent: '#8ecdd4',
     },
     {
-      title: 'Pulse UI — Nova Health',
-      role: 'Je pilote le motion design',
+      title: 'Atelier des Maîtres',
+      client: 'Louis Vuitton',
+      role: 'Montage narratif & motion typographique',
+      year: '2023',
+      location: 'Paris',
+      format: 'Reel 9:16',
+      videoSrc: 'Reel_Louis_Vuitton.mp4',
+      tags: ['Luxe', 'Film parfum', 'Slow motion'],
+      accent: '#f4c6a6',
+    },
+    {
+      title: 'Pulse Campus',
+      client: 'ISTEF',
+      role: 'Création contenu social & montage rapide',
       year: '2022',
-      description:
-        'Système d’identité animé pour l’application Pulse UI. Montage des démonstrations produit, design system, micro-interactions et livraison multi-plateforme.',
-      tags: ['Produit digital', 'After Effects', 'Design system'],
+      location: 'Toulouse',
+      format: 'Reel 9:16',
+      videoSrc: 'Reel_istef.mp4',
+      tags: ['Éducation', 'Social ads', 'Cadres dynamiques'],
+      accent: '#c1ff72',
+    },
+    {
+      title: 'International Santé',
+      client: 'International Santé',
+      role: 'Création contenu social & montage rapide',
+      year: '2022',
+      location: 'Toulouse',
+      format: 'Reel 9:16',
+      videoSrc: 'REEL_vide_o_1.mp4',
+      tags: ['Santé', 'Social ads', 'Promotion'],
+      accent: '#ff72aa',
     },
   ];
 }
