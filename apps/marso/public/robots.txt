@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://m4riin.github.io/marso/sitemap.xml
+Sitemap: https://www.equipe4.fr/sitemap.xml
