@@ -59,7 +59,7 @@ export class ReelDetailComponent {
         url: `${BASE_URL}/projets/${reel.slug}/`,
         contentUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
         embedUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
-        thumbnailUrl: `${BASE_URL}/og-cover.jpg`,
+        thumbnailUrl: `${BASE_URL}/og-cover.png`,
         publisher: {
           '@type': 'Person',
           name: 'Alexandre Marsollier',
