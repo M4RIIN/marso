@@ -23,7 +23,7 @@ export const REEL_PROJECTS: ReelProject[] = [
     year: '2024',
     location: 'Paris',
     format: 'Reel 9:16',
-    videoSrc: 'PLK.mp4',
+    videoSrc: 'capsule-club-plk-reel.mp4',
     tags: ['Musique', 'Grain 16mm', 'Cut nerveux'],
     accent: '#f7c740',
     summary:
@@ -44,7 +44,7 @@ export const REEL_PROJECTS: ReelProject[] = [
     year: '2023',
     location: 'Marseille',
     format: 'Reel 9:16',
-    videoSrc: 'REEL_OFS_ston.mp4',
+    videoSrc: 'ston-festival-ofs-studio.mp4',
     tags: ['Culture', 'Super 8', 'Color grading teal'],
     accent: '#8ecdd4',
     summary:
@@ -65,7 +65,7 @@ export const REEL_PROJECTS: ReelProject[] = [
     year: '2023',
     location: 'Paris',
     format: 'Reel 9:16',
-    videoSrc: 'Reel_Louis_Vuitton.mp4',
+    videoSrc: 'atelier-des-maitres-louis-vuitton.mp4',
     tags: ['Luxe', 'Film parfum', 'Slow motion'],
     accent: '#f4c6a6',
     summary:
@@ -86,7 +86,7 @@ export const REEL_PROJECTS: ReelProject[] = [
     year: '2022',
     location: 'Toulouse',
     format: 'Reel 9:16',
-    videoSrc: 'Reel_istef.mp4',
+    videoSrc: 'pulse-campus-istef-campus.mp4',
     tags: ['Éducation', 'Social ads', 'Cadres dynamiques'],
     accent: '#c1ff72',
     summary:
@@ -107,7 +107,7 @@ export const REEL_PROJECTS: ReelProject[] = [
     year: '2022',
     location: 'Toulouse',
     format: 'Reel 9:16',
-    videoSrc: 'REEL_vide_o_1.mp4',
+    videoSrc: 'international-sante-campagne-social.mp4',
     tags: ['Santé', 'Social ads', 'Promotion'],
     accent: '#ff72aa',
     summary:

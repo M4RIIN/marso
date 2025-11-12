@@ -4,6 +4,8 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ReelProject, getReelBySlug } from '../../data/reel-projects';
 
+const BASE_URL = 'https://m4riin.github.io/marso';
+
 @Component({
   selector: 'app-reel-detail',
   standalone: true,
@@ -13,6 +15,7 @@ import { ReelProject, getReelBySlug } from '../../data/reel-projects';
 })
 export class ReelDetailComponent {
   protected reel?: ReelProject;
+  protected videoSchema?: string;
   @ViewChild('detailVideo')
   protected set detailVideo(element: ElementRef<HTMLVideoElement> | undefined) {
     if (element) {
@@ -34,6 +37,7 @@ export class ReelDetailComponent {
       }
 
       this.reel = project;
+      this.videoSchema = this.buildVideoSchema(project);
     });
   }
 
@@ -41,5 +45,32 @@ export class ReelDetailComponent {
     void video.play().catch(() => {
       /* Autoplay may be blocked; ignore */
     });
+  }
+
+  private buildVideoSchema(reel: ReelProject): string {
+    return JSON.stringify(
+      {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: `${reel.title} — ${reel.client}`,
+        description: reel.summary,
+        uploadDate: `${reel.year}-01-01`,
+        inLanguage: 'fr-FR',
+        url: `${BASE_URL}/projets/${reel.slug}/`,
+        contentUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
+        embedUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
+        thumbnailUrl: `${BASE_URL}/og-cover.jpg`,
+        publisher: {
+          '@type': 'Person',
+          name: 'Alexandre Marsollier',
+          jobTitle: 'Monteur vidéo et réalisateur',
+          url: BASE_URL,
+        },
+        genre: reel.tags,
+        keywords: reel.tags.join(', '),
+      },
+      null,
+      2,
+    );
   }
 }

@@ -6,18 +6,27 @@
     <span></span>
   </div>
 
-  <video
-    class="reel-hero__video"
-    autoplay
-    muted
-    loop
-    playsinline
-    appAutoplayOnVisible
-    poster="https://m4riin.github.io/marso/og-cover.jpg"
-  >
-    <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas encore la vidéo HTML5.
-  </video>
+  <figure class="reel-hero__video-frame">
+    <video
+      class="reel-hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      appAutoplayOnVisible
+      poster="https://m4riin.github.io/marso/og-cover.jpg"
+      title="Showreel Alexandre Marsollier"
+      aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
+      aria-describedby="hero-video-caption"
+    >
+      <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas encore la vidéo HTML5.
+    </video>
+    <figcaption id="hero-video-caption" class="reel-hero__caption">
+      Showreel 2024 — extrait des réalisations d'Alexandre Marsollier, monteur vidéo et réalisateur.
+    </figcaption>
+  </figure>
 
   <div class="reel-hero__overlay" aria-hidden="true"></div>
   <div class="reel-hero__grain" aria-hidden="true"></div>
@@ -142,22 +151,31 @@
           [routerLink]="['/projets', reel.slug]"
           aria-label="Voir le détail du reel {{ reel.client }} - {{ reel.title }}"
         >
-          <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
-          <div class="reel-card__video-shell">
-            <video
-              class="reel-card__video"
-              autoplay
-              muted
-              loop
-              playsinline
-              appAutoplayOnVisible
-              [attr.title]="reel.title + ' — ' + reel.client"
-            >
-              <source [src]="'assets/media/' + reel.videoSrc" type="video/mp4" />
-              Votre navigateur ne supporte pas encore la vidéo HTML5.
-            </video>
-          </div>
-          <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
+          <figure class="reel-card__figure">
+            <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
+            <div class="reel-card__video-shell">
+              <video
+                class="reel-card__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                appAutoplayOnVisible
+                poster="https://m4riin.github.io/marso/og-cover.jpg"
+                [attr.title]="reel.title + ' — ' + reel.client"
+                [attr.aria-label]="reel.title + ' — ' + reel.client"
+                [attr.aria-describedby]="'reel-' + reel.slug + '-caption'"
+              >
+                <source [src]="'assets/media/' + reel.videoSrc" type="video/mp4" />
+                Votre navigateur ne supporte pas encore la vidéo HTML5.
+              </video>
+            </div>
+            <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
+            <figcaption class="reel-card__caption" [attr.id]="'reel-' + reel.slug + '-caption'">
+              {{ reel.title }} — {{ reel.client }}
+            </figcaption>
+          </figure>
         </a>
 
         <div class="reel-card__body">
@@ -268,4 +286,8 @@
       >
     </div>
   </section>
+
+  <script type="application/ld+json">
+    {{ videoStructuredData }}
+  </script>
 </main>

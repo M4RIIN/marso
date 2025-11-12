@@ -8,20 +8,29 @@
         <span></span>
       </div>
 
-      <div class="reel-detail__video-shell">
-        <video
-          #detailVideo
-          class="reel-detail__video"
-          controls
-          preload="metadata"
-          playsinline
-          autoplay
-          muted
-        >
-          <source [src]="'assets/media/' + project.videoSrc" type="video/mp4" />
-          Votre navigateur ne supporte pas encore la vidéo HTML5.
-        </video>
-      </div>
+      <figure class="reel-detail__figure">
+        <div class="reel-detail__video-shell">
+          <video
+            #detailVideo
+            class="reel-detail__video"
+            controls
+            preload="metadata"
+            playsinline
+            autoplay
+            muted
+            poster="https://m4riin.github.io/marso/og-cover.jpg"
+            [attr.title]="project.title + ' — ' + project.client"
+            [attr.aria-label]="project.title + ' — ' + project.client"
+            aria-describedby="detail-video-caption"
+          >
+            <source [src]="'assets/media/' + project.videoSrc" type="video/mp4" />
+            Votre navigateur ne supporte pas encore la vidéo HTML5.
+          </video>
+        </div>
+        <figcaption id="detail-video-caption" class="reel-detail__caption">
+          {{ project.title }} — {{ project.client }} · {{ project.format }}
+        </figcaption>
+      </figure>
     </div>
 
     <div class="reel-detail__body">
@@ -54,6 +63,9 @@
       <a class="reel-detail__back" routerLink="/">← Retour aux projets</a>
     </div>
   </div>
+  <script type="application/ld+json" *ngIf="videoSchema">
+    {{ videoSchema }}
+  </script>
 </section>
 
 <ng-template #loading>
