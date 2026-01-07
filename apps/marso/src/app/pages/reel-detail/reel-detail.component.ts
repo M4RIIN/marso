@@ -57,7 +57,7 @@ export class ReelDetailComponent {
         uploadDate: `${reel.year}-01-01`,
         inLanguage: 'fr-FR',
         url: `${BASE_URL}/projets/${reel.slug}/`,
-        contentUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
+        contentUrl: `https://github.com/M4RIIN/marso_media/raw/refs/heads/main/${reel.videoSrc}`,
         embedUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
         thumbnailUrl: `${BASE_URL}/og-cover.png`,
         publisher: {

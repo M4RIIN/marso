@@ -15,12 +15,11 @@
       playsinline
       preload="metadata"
       appAutoplayOnVisible
-      poster="https://www.equipe4.fr/og-cover.png"
       title="Showreel Alexandre Marsollier"
       aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
       aria-describedby="hero-video-caption"
     >
-      <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+      <source src="https://github.com/M4RIIN/marso_media/raw/refs/heads/main/atelier-des-maitres-louis-vuitton.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas encore la vidéo HTML5.
     </video>
     <figcaption id="hero-video-caption" class="reel-hero__caption">
@@ -167,7 +166,7 @@
                 [attr.aria-label]="reel.title + ' — ' + reel.client"
                 [attr.aria-describedby]="'reel-' + reel.slug + '-caption'"
               >
-                <source [src]="'assets/media/' + reel.videoSrc" type="video/mp4" />
+                <source [src]="'https://github.com/M4RIIN/marso_media/raw/refs/heads/main/' + reel.videoSrc" type="video/mp4" />
                 Votre navigateur ne supporte pas encore la vidéo HTML5.
               </video>
             </div>
