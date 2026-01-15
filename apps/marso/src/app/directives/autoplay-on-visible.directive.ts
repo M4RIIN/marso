@@ -16,6 +16,8 @@ import {
 export class AutoplayOnVisibleDirective implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
   private readonly isBrowser: boolean;
+  private hasLoadedSources = false;
+  private sources: HTMLSourceElement[] = [];
 
   constructor(
     private readonly elementRef: ElementRef<HTMLVideoElement>,
@@ -33,20 +35,24 @@ export class AutoplayOnVisibleDirective implements AfterViewInit, OnDestroy {
     this.ngZone.runOutsideAngular(() => {
       const video = this.elementRef.nativeElement;
       this.prepareVideo(video);
+      this.captureSources(video);
 
       const handleEntries = (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           const ratio = entry.intersectionRatio;
           if (entry.isIntersecting && ratio > 0.05) {
+            this.loadMediaIfNeeded(video);
             this.playVideo(video);
           } else {
             video.pause();
+            this.unloadMedia(video);
           }
         });
       };
 
       this.observer = new IntersectionObserver(handleEntries, {
-        threshold: [0, 0.05, 0.1, 0.25, 0.5],
+        rootMargin: '0px 0px 200px 0px',
+        threshold: [0, 0.1, 0.25, 0.5],
       });
 
       this.observer.observe(video);
@@ -54,6 +60,7 @@ export class AutoplayOnVisibleDirective implements AfterViewInit, OnDestroy {
       // Safeguard for initial view before observer fires
       requestAnimationFrame(() => {
         if (this.isElementVisible(video)) {
+          this.loadMediaIfNeeded(video);
           this.playVideo(video);
         }
       });
@@ -71,11 +78,52 @@ export class AutoplayOnVisibleDirective implements AfterViewInit, OnDestroy {
     video.playsInline = true;
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
-    video.setAttribute('preload', video.preload || 'auto');
+    video.preload = 'none';
     video.removeAttribute('controls');
-    if (!video.preload) {
-      video.preload = 'auto';
+  }
+
+  private captureSources(video: HTMLVideoElement): void {
+    this.sources = Array.from(video.querySelectorAll('source'));
+    this.sources.forEach((source) => {
+      const dataSrc = source.dataset['src'] || source.getAttribute('src');
+      if (dataSrc) {
+        source.dataset['src'] = dataSrc;
+      }
+      source.removeAttribute('src');
+    });
+  }
+
+  private loadMediaIfNeeded(video: HTMLVideoElement): void {
+    if (this.hasLoadedSources) {
+      return;
     }
+
+    this.sources.forEach((source) => {
+      const dataSrc = source.dataset['src'];
+      if (dataSrc) {
+        source.src = dataSrc;
+      }
+    });
+
+    video.load();
+    this.hasLoadedSources = true;
+  }
+
+  private unloadMedia(video: HTMLVideoElement): void {
+    if (!this.hasLoadedSources) {
+      return;
+    }
+
+    this.sources.forEach((source) => {
+      const currentSrc = source.getAttribute('src');
+      if (currentSrc) {
+        source.dataset['src'] = currentSrc;
+        source.removeAttribute('src');
+      }
+    });
+
+    this.hasLoadedSources = false;
+    video.load(); // cancels any pending network request
   }
 
   private playVideo(video: HTMLVideoElement): void {
