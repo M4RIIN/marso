@@ -1,161 +1,60 @@
-<section class="mv-reel-hero" aria-label="Monteur vidéo freelance à Toulouse">
-  <div class="mv-filmstrip" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <video
-    class="mv-hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    appAutoplayOnVisible
-  >
-    <source data-src="https://m4riin.github.io/marso_media/atelier-des-maitres-louis-vuitton.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas encore la vidéo HTML5.
-  </video>
-
-  <div class="mv-hero-overlay" aria-hidden="true"></div>
-  <div class="mv-hero-grain" aria-hidden="true"></div>
-
-  <div class="mv-hero-inner">
-    <div class="mv-hero-pill">
-      <span>designer</span>
-      <span>editor</span>
-    </div>
-
-    <p class="mv-badge">Monteur vidéo freelance à Toulouse</p>
-    <h1>Je suis Alexandre Marsollier, monteur vidéo freelance</h1>
-    <p class="mv-subtitle">
-      Je monte vos films de marque, documentaires et campagnes sociales avec la même exigence artistique que sur mes
-      réalisations de réalisateur/motion designer. Basé à Toulouse, je collabore en présentiel ou à distance et je
-      sécurise chaque mission via mon profil Malt vérifié.
-    </p>
-
-    <div class="mv-cta">
-      <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Discuter d'un montage</a>
-      <a
-        class="mv-button mv-button--ghost"
-        href="https://www.malt.fr/profile/alexandremarsollier"
-        target="_blank"
-        rel="noopener"
-      >
-        Voir mon profil Malt
-      </a>
-    </div>
-
-    <div class="mv-kpis">
-      <div>
-        <span>+60</span>
-        <p>montages vidéo livrés pour marques et startups</p>
-      </div>
-      <div>
-        <span>48h</span>
-        <p>pour lancer un projet via Malt ou en direct</p>
-      </div>
-      <div>
-        <span>Remote &amp; on-site</span>
-        <p>Présence en salle de montage possible à Toulouse</p>
-      </div>
-    </div>
-  </div>
-
-  <p class="mv-hero-vertical" aria-hidden="true">/monteur video</p>
-</section>
-
 <main class="mv-page">
-  <section class="mv-section mv-intro">
-    <div class="mv-section__header">
-      <p class="mv-section__eyebrow">Manifesto</p>
-      <h2>Pourquoi faire appel à un monteur vidéo freelance senior&nbsp;?</h2>
-    </div>
-    <div class="mv-intro__text">
-      <p *ngFor="let paragraph of introParagraphs">
-        {{ paragraph }}
-      </p>
-    </div>
+  <section class="mv-hero" aria-label="Présentation du monteur vidéo">
+    <p class="mv-eyebrow">À propos</p>
+    <h1>Monteur vidéo freelance &amp; alternant chargé d’audiovisuel</h1>
+    <p *ngFor="let paragraph of heroParagraphs">
+      {{ paragraph }}
+    </p>
   </section>
 
-  <section class="mv-section">
-    <header class="mv-section__header">
+  <section class="mv-section mv-prestations" id="prestations">
+    <div class="mv-section__header">
       <p class="mv-section__eyebrow">Prestations</p>
       <h2>Prestations de montage vidéo</h2>
-      <p>
-        Que vous cherchiez un monteur video pour un film luxe, un lancement produit ou une série social media, je
-        construis un récit clair, rythmé et optimisé pour vos canaux de diffusion.
-      </p>
-    </header>
-
-    <div class="mv-grid">
-      <article *ngFor="let service of services; let i = index" class="mv-card">
-        <div class="mv-card__badge">{{ i + 1 | number: '2.0-0' }}</div>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-        <ul>
-          <li *ngFor="let item of service.deliverables">{{ item }}</li>
-        </ul>
-      </article>
+      <p>Accompagnement complet de l’idée au rendu final, quel que soit le format ou le canal de diffusion.</p>
     </div>
-  </section>
-
-  <section class="mv-section mv-highlight" aria-label="Positionnement monteur vidéo Toulouse">
-    <div class="mv-section__header">
-      <p class="mv-section__eyebrow">Toulouse &amp; Remote</p>
-      <h2>Monteur vidéo Toulouse : ce que vous gagnez</h2>
-    </div>
-    <p>
-      En travaillant avec moi, monteur vidéo freelance toulousain, vous gardez un interlocuteur unique qui comprend les
-      spécificités locales. Je me déplace en salle de montage et je reste opérationnel pour vos lancements nationaux.
-    </p>
-    <ul class="mv-highlight__list">
-      <li>Présence en salle de montage à Toulouse et en Occitanie</li>
-      <li>Workflow hybride télétravail + rencontres physiques</li>
-      <li>Accompagnement SEO vidéo pour YouTube et Google</li>
-      <li>Coordination avec réalisateurs, agences et studios son</li>
+    <ul class="mv-prestations__list">
+      <li *ngFor="let item of prestations">{{ item }}</li>
     </ul>
+    <div class="mv-prestations__cta">
+      <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Demandez un devis</a>
+      <a class="mv-button mv-button--ghost" routerLink="/" fragment="projets">Voir mes réalisations</a>
+    </div>
   </section>
 
-  <section class="mv-section">
-    <header class="mv-section__header">
+  <section class="mv-section mv-method" id="methode">
+    <div class="mv-section__header">
       <p class="mv-section__eyebrow">Méthode</p>
-      <h2>Workflow d'un monteur vidéo senior</h2>
-      <p>
-        Processus documenté à chaque étape, partages sur Frame.io ou Notion, et validations sécurisées pour garder une
-        trace des décisions éditoriales.
-      </p>
-    </header>
-
-    <ol class="mv-workflow">
-      <li *ngFor="let step of workflow">
-        <h3>{{ step.title }}</h3>
+      <h2>Méthode</h2>
+      <p>Un process documenté qui sécurise chaque étape, en présentiel à Toulouse ou à distance.</p>
+    </div>
+    <ol class="mv-method__steps">
+      <li *ngFor="let step of methodSteps">
+        <span>{{ step.title }}</span>
         <p>{{ step.detail }}</p>
       </li>
     </ol>
   </section>
 
-  <section class="mv-section">
-    <header class="mv-section__header">
-      <p class="mv-section__eyebrow">Compétences</p>
+  <section class="mv-section mv-skills" id="competences">
+    <div class="mv-section__header">
+      <p class="mv-section__eyebrow">Compétences &amp; outils</p>
       <h2>Compétences &amp; outils</h2>
-      <p>
-        Adobe Premiere Pro pour structurer vos timelines, After Effects pour les animations, sans oublier la
-        post-production complète (montage, mixage, animation) afin de livrer des vidéos cohérentes et prêtes à diffuser.
-      </p>
-    </header>
-    <ul class="mv-skills">
+    </div>
+    <ul class="mv-skills__list">
       <li *ngFor="let skill of skills">{{ skill }}</li>
     </ul>
+    <p class="mv-skills__summary">
+      {{ skillsSummary }}
+    </p>
   </section>
 
-  <section class="mv-section">
-    <header class="mv-section__header">
+  <section class="mv-section mv-faq" id="faq">
+    <div class="mv-section__header">
       <p class="mv-section__eyebrow">FAQ</p>
-      <h2>Questions fréquentes sur le montage vidéo</h2>
-    </header>
-    <dl class="mv-faq">
+      <h2>Questions fréquentes</h2>
+    </div>
+    <dl>
       <div *ngFor="let faq of faqs">
         <dt>{{ faq.question }}</dt>
         <dd>{{ faq.answer }}</dd>
@@ -163,16 +62,13 @@
     </dl>
   </section>
 
-  <section class="mv-section mv-section--cta">
-    <p class="mv-section__eyebrow">Brief express</p>
-    <h2>Parlons de votre prochain montage</h2>
-    <p>
-      Brief détaillé, moodboard, rushs à organiser ou simple idée ? Envoyez-moi un message et je vous propose un plan de
-      montage vidéo en 48h.
-    </p>
-    <div class="mv-cta">
+  <section class="mv-section mv-cta" aria-label="Prêt à lancer un projet">
+    <p class="mv-eyebrow">Prêt à lancer un projet&nbsp;?</p>
+    <h2>Brief détaillé, moodboard, rushs à organiser ou simple idée&nbsp;?</h2>
+    <p>Envoyez-moi un message et je vous propose un plan de montage dans les 48h.</p>
+    <div class="mv-prestations__cta">
       <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Envoyer un brief</a>
-      <a class="mv-button mv-button--ghost" routerLink="/">Voir le portfolio complet</a>
+      <a class="mv-button mv-button--ghost" routerLink="/" fragment="projets">Voir le portfolio</a>
     </div>
   </section>
 </main>
