@@ -35,4 +35,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist/apps/marso/browser
         publish_branch: gh-pages
-        cname: equipe4.fr
+        cname: marsolliervideo.fr
