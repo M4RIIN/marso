@@ -2,11 +2,11 @@ import { ResolveFn, Route } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { MonteurVideoComponent } from './pages/monteur-video/monteur-video.component';
 import { ReelDetailComponent } from './pages/reel-detail/reel-detail.component';
-import { getReelBySlug } from './data/reel-projects';
+import { getPortfolioProjectBySlug } from './data/portfolio';
 
-const reelTitleResolver: ResolveFn<string> = (route) => {
+const projectTitleResolver: ResolveFn<string> = (route) => {
   const slug = route.paramMap.get('slug') ?? '';
-  const project = getReelBySlug(slug);
+  const project = getPortfolioProjectBySlug(slug);
   return project
     ? `${project.title} — ${project.client} | Alexandre Marsollier`
     : 'Projet vidéo — Alexandre Marsollier';
@@ -26,7 +26,7 @@ export const appRoutes: Route[] = [
   {
     path: 'projets/:slug',
     component: ReelDetailComponent,
-    title: reelTitleResolver,
+    title: projectTitleResolver,
   },
   { path: '**', redirectTo: '' },
 ];

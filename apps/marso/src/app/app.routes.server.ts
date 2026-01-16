@@ -1,12 +1,12 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
-import { REEL_PROJECTS } from './data/reel-projects';
+import { PORTFOLIO_PROJECTS } from './data/portfolio';
 
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'projets/:slug',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: async () =>
-      REEL_PROJECTS.map((project) => ({ slug: project.slug })),
+      PORTFOLIO_PROJECTS.map((project) => ({ slug: project.slug })),
   },
   {
     path: '**',

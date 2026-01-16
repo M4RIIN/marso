@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ReelProject, getReelBySlug } from '../../data/reel-projects';
+import { PortfolioProject, getPortfolioProjectBySlug } from '../../data/portfolio';
 
 const BASE_URL = 'https://m4riin.github.io/marso';
 
@@ -14,7 +14,7 @@ const BASE_URL = 'https://m4riin.github.io/marso';
   styleUrl: './reel-detail.component.css',
 })
 export class ReelDetailComponent {
-  protected reel?: ReelProject;
+  protected project?: PortfolioProject;
   protected videoSchema?: string;
   @ViewChild('detailVideo')
   protected set detailVideo(element: ElementRef<HTMLVideoElement> | undefined) {
@@ -29,14 +29,14 @@ export class ReelDetailComponent {
   constructor() {
     this.route.paramMap.pipe(takeUntilDestroyed()).subscribe((params) => {
       const slug = params.get('slug');
-      const project = slug ? getReelBySlug(slug) : undefined;
+      const project = slug ? getPortfolioProjectBySlug(slug) : undefined;
 
       if (!project) {
         void this.router.navigateByUrl('/');
         return;
       }
 
-      this.reel = project;
+      this.project = project;
       this.videoSchema = this.buildVideoSchema(project);
     });
   }
@@ -47,7 +47,7 @@ export class ReelDetailComponent {
     });
   }
 
-  private buildVideoSchema(reel: ReelProject): string {
+  private buildVideoSchema(reel: PortfolioProject): string {
     return JSON.stringify(
       {
         '@context': 'https://schema.org',
@@ -57,8 +57,8 @@ export class ReelDetailComponent {
         uploadDate: `${reel.year}-01-01`,
         inLanguage: 'fr-FR',
         url: `${BASE_URL}/projets/${reel.slug}/`,
-        contentUrl: `https://m4riin.github.io/marso_media/${reel.videoSrc}`,
-        embedUrl: `${BASE_URL}/assets/media/${reel.videoSrc}`,
+        contentUrl: reel.videoUrl,
+        embedUrl: reel.videoUrl,
         thumbnailUrl: `${BASE_URL}/og-cover.png`,
         publisher: {
           '@type': 'Person',

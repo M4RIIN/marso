@@ -125,14 +125,22 @@
 
 .reel-detail__video {
   aspect-ratio: 9 / 16;
-  width: auto;
-  height: 100%;
-  max-height: 100%;
+  width: 100%;
   max-width: min(420px, 100%);
+  height: auto;
   border-radius: 32px;
   object-fit: contain;
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5);
   background: #000;
+}
+
+.reel-detail__media[data-aspect='16:9'] .reel-detail__video {
+  aspect-ratio: 16 / 9;
+  max-width: min(720px, 100%);
+}
+
+.reel-detail__media[data-aspect='16:9'] {
+  min-height: clamp(360px, 55vh, 75vh);
 }
 
 .reel-detail__caption {

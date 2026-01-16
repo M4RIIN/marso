@@ -19,11 +19,11 @@
       aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
       aria-describedby="hero-video-caption"
     >
-      <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_atelier-des-maitres-louis-vuitton.mp4" type="video/mp4" />
+      <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_1_AM.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas encore la vidéo HTML5.
     </video>
     <figcaption id="hero-video-caption" class="reel-hero__caption">
-      Showreel 2024 — extrait des réalisations d'Alexandre Marsollier, monteur vidéo et réalisateur.
+      Alexandre Marsollier - Monteur vidéo freelance à Toulouse
     </figcaption>
   </figure>
 
@@ -32,31 +32,32 @@
 
   <div class="reel-hero__inner">
     <div class="hero-pill">
-      <span>designer</span>
-      <span>editor</span>
+      <span>video</span>
+      <span>monteur</span>
     </div>
 
     <div class="reel-hero__title-block">
-      <p class="hero__eyebrow">Monteur vidéo freelance à Toulouse</p>
+      <p class="hero__eyebrow">Alexandre Marsollier</p>
       <h1>
-        <span>Monteur vidéo &amp; Réalisateur</span>
-        <span class="hero__script" aria-hidden="true">Portfolio</span>
+        <span>Monteur vidéo freelance à</span>
+        <span class="hero__script" aria-hidden="true">Toulouse</span>
       </h1>
       <p class="hero__subtitle">
-        Je conçois des films de marque, des documentaires et des identités animées pour des marques exigeantes.
+        Je réalise des vidéos dynamiques pour entreprises, startups, associations et
+        créateurs : interviews, vidéos événementielles, capsules sociales et contenus
+        adaptés aux réseaux.
       </p>
     </div>
 
     <ul class="hero__highlights">
-      <li>Direction artistique &amp; narration filmique pour marques premium</li>
-      <li>Montage vidéo freelance, colorimétrie et motion design sur-mesure</li>
-      <li>Production agile en France et pour les entreprises toulousaines</li>
-      <li>Freelance vérifié sur Malt pour sécuriser budget et planning</li>
+      <li>Montage &amp; post-production</li>
+      <li>Interviews et captation légère</li>
+      <li>Titres animés &amp; habillage graphique</li>
+      <li>Livrables 16:9 &amp; formats verticaux</li>
     </ul>
 
     <div class="hero__actions">
       <a class="hero__cta" href="#projets" aria-label="Voir mes projets">Découvrir mes projets</a>
-      <p class="hero__caption">Réponse sous 24h — Disponible missions France &amp; remote</p>
     </div>
   </div>
 
@@ -124,75 +125,87 @@
 
   <section class="section projects" id="projets">
     <header class="section__header">
-      <p class="section__eyebrow">Sélection</p>
-      <h2>Sélection de projets que j'ai montés en freelance</h2>
+      <p class="section__eyebrow">Portfolio</p>
+      <h2>Portfolio vidéo piloté de bout en bout</h2>
       <p>
-        Chaque étude associe montage vidéo, recherche visuelle, direction photo et motion design pour créer des pièces
-        iconiques. Voici un aperçu des productions les plus demandées pour lesquelles j'ai assuré le montage.
+        Chaque sous-section représente une famille de briefs que je pilote régulièrement. Que ce soit en vertical social
+        ou en 16:9 pour le web, je garde la même exigence : direction artistique, montage premium et pilotage technique
+        documenté.
       </p>
     </header>
 
-    <div class="reels-grid" role="list">
-      <article
-        class="reel-card"
-        *ngFor="let reel of reels"
-        role="listitem"
-        [style.--reel-accent]="reel.accent"
-        aria-label="Reel {{ reel.client }} - {{ reel.title }}"
-      >
-        <div class="reel-card__header">
-          <span class="reel-card__format">{{ reel.format }} · {{ reel.location }}</span>
-          <span class="reel-card__year">{{ reel.year }}</span>
-        </div>
+    <div class="portfolio-sections">
+      <article class="portfolio-section" *ngFor="let section of portfolioSections">
+        <header class="portfolio-section__header">
+          <p class="portfolio-section__eyebrow">{{ section.title }}</p>
+          <p class="portfolio-section__description">
+            {{ section.description }}
+          </p>
+        </header>
 
-        <a
-          class="reel-card__film"
-          [routerLink]="['/projets', reel.slug]"
-          aria-label="Voir le détail du reel {{ reel.client }} - {{ reel.title }}"
-        >
-          <figure class="reel-card__figure">
-            <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
-            <div class="reel-card__video-shell">
-              <video
-                class="reel-card__video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                appAutoplayOnVisible
-                poster="https://www.equipe4.fr/og-cover.png"
-                [attr.title]="reel.title + ' — ' + reel.client"
-                [attr.aria-label]="reel.title + ' — ' + reel.client"
-                [attr.aria-describedby]="'reel-' + reel.slug + '-caption'"
-              >
-                <source [attr.data-src]="'https://m4riin.github.io/marso_media/' + reel.videoSrc" type="video/mp4" />
-                Votre navigateur ne supporte pas encore la vidéo HTML5.
-              </video>
+        <div class="reels-grid" role="list">
+          <article
+            class="reel-card"
+            *ngFor="let project of section.projects"
+            role="listitem"
+            [style.--reel-accent]="project.accent"
+            aria-label="Projet {{ project.client }} - {{ project.title }}"
+          >
+            <div class="reel-card__header">
+              <span class="reel-card__format">{{ project.type }} · {{ project.location }}</span>
+              <span class="reel-card__year">{{ project.year }}</span>
             </div>
-            <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
-            <figcaption class="reel-card__caption" [attr.id]="'reel-' + reel.slug + '-caption'">
-              {{ reel.title }} — {{ reel.client }}
-            </figcaption>
-          </figure>
-        </a>
 
-        <div class="reel-card__body">
-          <p class="reel-card__client">{{ reel.client }}</p>
-          <h3>{{ reel.title }}</h3>
-          <p class="reel-card__role">{{ reel.role }}</p>
-          <ul class="reel-card__tags">
-            <li *ngFor="let tag of reel.tags">{{ tag }}</li>
-          </ul>
-          <div class="reel-card__actions">
-            <button
-              type="button"
-              class="reel-card__details"
-              [routerLink]="['/projets', reel.slug]"
+            <a
+              class="reel-card__film"
+              [routerLink]="['/projets', project.slug]"
+              aria-label="Voir le détail du projet {{ project.client }} - {{ project.title }}"
             >
-              Détails
-            </button>
-          </div>
+              <figure class="reel-card__figure">
+                <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
+                <div class="reel-card__video-shell" [attr.data-aspect]="project.aspectRatio">
+                  <video
+                    class="reel-card__video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    appAutoplayOnVisible
+                    poster="https://www.equipe4.fr/og-cover.png"
+                    [attr.title]="project.title + ' — ' + project.client"
+                    [attr.aria-label]="project.title + ' — ' + project.client"
+                    [attr.aria-describedby]="'project-' + project.slug + '-caption'"
+                  >
+                    <source [attr.data-src]="project.videoUrl" type="video/mp4" />
+                    Votre navigateur ne supporte pas encore la vidéo HTML5.
+                  </video>
+                </div>
+                <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
+                <figcaption class="reel-card__caption" [attr.id]="'project-' + project.slug + '-caption'">
+                  {{ project.title }} — {{ project.client }}
+                </figcaption>
+              </figure>
+            </a>
+
+            <div class="reel-card__body">
+              <p class="reel-card__client">{{ project.client }}</p>
+              <h3>{{ project.title }}</h3>
+              <p class="reel-card__role">{{ project.role }}</p>
+              <ul class="reel-card__tags">
+                <li *ngFor="let tag of project.tags">{{ tag }}</li>
+              </ul>
+              <div class="reel-card__actions">
+                <button
+                  type="button"
+                  class="reel-card__details"
+                  [routerLink]="['/projets', project.slug]"
+                >
+                  Détails
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </article>
     </div>
