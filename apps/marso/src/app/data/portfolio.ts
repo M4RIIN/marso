@@ -61,7 +61,7 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         location: 'Paris',
         type: 'Film événementiel',
         aspectRatio: '16:9',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_4_capsule-club-plk-reel.mp4`,
+        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_6_PO_V2.mp4`,
         tags: ['Event', 'Habillage motion', 'Typographies'],
         accent: '#8ecdd4',
         summary:
@@ -90,7 +90,7 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         location: 'Toulouse',
         type: 'Interview corporate',
         aspectRatio: '16:9',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_7_Respire_V3.mp4`,
+        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_5_VIDEO_L MATTEI V3.mp4`,
         tags: ['Corporate', 'Interview', 'Habillage'],
         accent: '#f4c6a6',
         summary: 'Portrait vidéo pour valoriser l’expertise et le parcours de L. Mattei.',
@@ -153,7 +153,7 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         location: 'Bordeaux',
         type: 'Interview pédagogique',
         aspectRatio: '16:9',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_2_BRS_V3.mp4`,
+        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_6_TélépilotageV3.mp4`,
         tags: ['Tech', 'Expert', 'Studio'],
         accent: '#8ecdd4',
         summary:
