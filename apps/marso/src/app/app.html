@@ -1,5 +1,8 @@
 <header class="site-header" [class.site-header--hidden]="isHeaderHidden">
-  <a class="site-logo" routerLink="/">Alexandre Marsollier</a>
+  <a class="site-logo" routerLink="/">
+    <img class="site-logo__image" src="assets/logo.png" alt="Logo Alexandre Marsollier" />
+    <span class="site-logo__text">Alexandre Marsollier</span>
+  </a>
   <nav class="site-nav" aria-label="Navigation principale">
     <a
       *ngFor="let item of navItems"
