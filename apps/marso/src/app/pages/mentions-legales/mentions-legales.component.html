@@ -1,0 +1,92 @@
+<main class="legal-page">
+  <section class="legal-page__intro">
+    <p class="legal-page__eyebrow">Informations légales</p>
+    <h1>Mentions légales</h1>
+    <p>
+      Ce site est édité par Alexandre Marsollier, monteur vidéo freelance et motion designer à Toulouse.
+      Vous trouverez ci-dessous les informations légales relatives à l’identité de l’éditeur, à l’hébergement,
+      à la protection des contenus et à l’usage des données collectées via marsolliervideo.fr.
+    </p>
+    <p class="legal-page__date">Dernière mise à jour : {{ lastUpdated }}</p>
+  </section>
+
+  <section class="legal-card">
+    <h2>Éditeur &amp; responsable de publication</h2>
+    <dl>
+      <ng-container *ngFor="let item of contactItems">
+        <dt>{{ item.label }}</dt>
+        <dd>
+          <ng-container [ngSwitch]="!!item.href">
+            <a
+              *ngSwitchCase="true"
+              [href]="item.href"
+              [attr.target]="item.external ? '_blank' : null"
+              [attr.rel]="item.external ? 'noopener noreferrer' : null"
+            >
+              {{ item.value }}
+            </a>
+            <span *ngSwitchDefault>{{ item.value }}</span>
+          </ng-container>
+        </dd>
+      </ng-container>
+    </dl>
+  </section>
+
+  <section class="legal-card">
+    <h2>Hébergement</h2>
+    <p>
+      Le site marsolliervideo.fr est hébergé par GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr St, San Francisco,
+      CA 94107, États-Unis. Les serveurs sont supervisés par les équipes de GitHub et bénéficient d’un suivi
+      opérationnel continu.
+    </p>
+    <p>
+      Support :
+      <a href="https://support.github.com" target="_blank" rel="noopener noreferrer">support.github.com</a>
+    </p>
+  </section>
+
+  <section class="legal-card">
+    <h2>Propriété intellectuelle</h2>
+    <p>
+      L’ensemble des contenus présents sur le site (textes, vidéos, éléments graphiques, identité visuelle et code) est
+      protégé par la législation française et internationale relative à la propriété intellectuelle.
+      Toute reproduction, représentation ou adaptation partielle ou totale, sur tout support, nécessite l’autorisation
+      écrite préalable d’Alexandre Marsollier.
+    </p>
+  </section>
+
+  <section class="legal-card">
+    <h2>Données personnelles &amp; cookies</h2>
+    <p>
+      Aucune donnée n’est collectée automatiquement en dehors des statistiques anonymisées fournies par les outils
+      d’hébergement. Les informations envoyées volontairement (email, téléphone, message) servent uniquement à répondre
+      aux demandes des clients et prospects.
+    </p>
+    <ul>
+      <li>Les échanges sont conservés pour la durée strictement nécessaire au suivi des projets.</li>
+      <li>Aucune donnée n’est vendue ni cédée à des tiers.</li>
+      <li>Vous disposez d’un droit d’accès, de rectification et de suppression en écrivant à l’adresse email ci-dessus.</li>
+    </ul>
+    <p>Le site n’implémente pas de cookies publicitaires ni de pixels tiers.</p>
+  </section>
+
+  <section class="legal-card">
+    <h2>Responsabilité</h2>
+    <p>
+      Malgré les vérifications apportées, des erreurs ou omissions peuvent subsister sur le site. Alexandre Marsollier ne
+      saurait être tenu responsable des dommages directs ou indirects résultant de la consultation du site ou de
+      l’utilisation des informations publiées. Les liens externes sont fournis à titre informatif et n’engagent pas la
+      responsabilité de l’éditeur.
+    </p>
+  </section>
+
+  <section class="legal-card">
+    <h2>Contact</h2>
+    <p>
+      Pour toute question relative aux mentions légales, à la protection des données ou pour signaler un contenu,
+      contactez-moi à l’adresse
+      <a href="mailto:alexandre.marsollier05@gmail.com">alexandre.marsollier05@gmail.com</a>
+      ou par téléphone au <a href="tel:+33749867697">07&nbsp;49&nbsp;86&nbsp;76&nbsp;97</a>.
+    </p>
+  </section>
+</main>
