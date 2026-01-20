@@ -22,7 +22,7 @@
       <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_1_AM.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas encore la vidéo HTML5.
     </video>
-    <figcaption id="hero-video-caption" class="reel-hero__caption">
+    <figcaption id="hero-video-caption" class="reel-hero__caption" style="margin-left: 10vw">
       Alexandre Marsollier - Monteur vidéo freelance à Toulouse
     </figcaption>
   </figure>
@@ -77,77 +77,98 @@
     </header>
 
     <div class="portfolio-sections">
-      <article class="portfolio-section" *ngFor="let section of portfolioSections">
+      <article class="portfolio-section" *ngFor="let section of portfolioSections; let i = index">
         <header class="portfolio-section__header">
-          <p class="portfolio-section__eyebrow">{{ section.title }}</p>
-          <p class="portfolio-section__description">
-            {{ section.description }}
-          </p>
+          <div class="portfolio-section__intro">
+            <p class="portfolio-section__eyebrow">{{ section.title }}</p>
+            <p class="portfolio-section__description">
+              {{ section.description }}
+            </p>
+          </div>
+          <button
+            type="button"
+            class="portfolio-section__toggle"
+            (click)="togglePortfolioSection(section.title)"
+            [attr.aria-expanded]="isPortfolioSectionOpen(section.title)"
+            [attr.aria-controls]="'portfolio-section-' + i"
+          >
+            <span class="sr-only">
+              {{ isPortfolioSectionOpen(section.title) ? 'Masquer' : 'Afficher' }} les projets {{ section.title }}
+            </span>
+            <span aria-hidden="true" class="portfolio-section__toggle-icon"></span>
+          </button>
         </header>
 
-        <div class="reels-grid" role="list">
-          <article
-            class="reel-card"
-            *ngFor="let project of section.projects"
-            role="listitem"
-            [style.--reel-accent]="project.accent"
-            aria-label="Projet {{ project.client }} - {{ project.title }}"
-          >
-            <div class="reel-card__header">
-              <span class="reel-card__format">{{ project.type }} · {{ project.location }}</span>
-              <span class="reel-card__year">{{ project.year }}</span>
-            </div>
-
-            <a
-              class="reel-card__film"
-              [routerLink]="['/projets', project.slug]"
-              aria-label="Voir le détail du projet {{ project.client }} - {{ project.title }}"
+        <div
+          class="portfolio-section__content"
+          [attr.id]="'portfolio-section-' + i"
+          [class.is-open]="isPortfolioSectionOpen(section.title)"
+          [attr.aria-hidden]="!isPortfolioSectionOpen(section.title)"
+        >
+          <div class="reels-grid" role="list">
+            <article
+              class="reel-card"
+              *ngFor="let project of section.projects"
+              role="listitem"
+              [style.--reel-accent]="project.accent"
+              aria-label="Projet {{ project.client }} - {{ project.title }}"
             >
-              <figure class="reel-card__figure">
-                <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
-                <div class="reel-card__video-shell" [attr.data-aspect]="project.aspectRatio">
-                  <video
-                    class="reel-card__video"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    appAutoplayOnVisible
-                    poster="https://www.equipe4.fr/og-cover.png"
-                    [attr.title]="project.title + ' — ' + project.client"
-                    [attr.aria-label]="project.title + ' — ' + project.client"
-                    [attr.aria-describedby]="'project-' + project.slug + '-caption'"
-                  >
-                    <source [attr.data-src]="project.videoUrl" type="video/mp4" />
-                    Votre navigateur ne supporte pas encore la vidéo HTML5.
-                  </video>
-                </div>
-                <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
-                <figcaption class="reel-card__caption" [attr.id]="'project-' + project.slug + '-caption'">
-                  {{ project.title }} — {{ project.client }}
-                </figcaption>
-              </figure>
-            </a>
-
-            <div class="reel-card__body">
-              <p class="reel-card__client">{{ project.client }}</p>
-              <h3>{{ project.title }}</h3>
-              <p class="reel-card__role">{{ project.role }}</p>
-              <ul class="reel-card__tags">
-                <li *ngFor="let tag of project.tags">{{ tag }}</li>
-              </ul>
-              <div class="reel-card__actions">
-                <button
-                  type="button"
-                  class="reel-card__details"
-                  [routerLink]="['/projets', project.slug]"
-                >
-                  Détails
-                </button>
+              <div class="reel-card__header">
+                <span class="reel-card__format">{{ project.type }} · {{ project.location }}</span>
+                <span class="reel-card__year">{{ project.year }}</span>
               </div>
-            </div>
-          </article>
+
+              <a
+                class="reel-card__film"
+                [routerLink]="['/projets', project.slug]"
+                aria-label="Voir le détail du projet {{ project.client }} - {{ project.title }}"
+              >
+                <figure class="reel-card__figure">
+                  <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
+                  <div class="reel-card__video-shell" [attr.data-aspect]="project.aspectRatio">
+                    <video
+                      class="reel-card__video"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                      appAutoplayOnVisible
+                      poster="https://www.equipe4.fr/og-cover.png"
+                      [attr.title]="project.title + ' — ' + project.client"
+                      [attr.aria-label]="project.title + ' — ' + project.client"
+                      [attr.aria-describedby]="'project-' + project.slug + '-caption'"
+                    >
+                      <source [attr.data-src]="project.videoUrl" type="video/mp4" />
+                      Votre navigateur ne supporte pas encore la vidéo HTML5.
+                    </video>
+                  </div>
+                  <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
+                  <figcaption class="reel-card__caption" [attr.id]="'project-' + project.slug + '-caption'">
+                    {{ project.title }} — {{ project.client }}
+                  </figcaption>
+                </figure>
+              </a>
+
+              <div class="reel-card__body">
+                <p class="reel-card__client">{{ project.client }}</p>
+                <h3>{{ project.title }}</h3>
+                <p class="reel-card__role">{{ project.role }}</p>
+                <ul class="reel-card__tags">
+                  <li *ngFor="let tag of project.tags">{{ tag }}</li>
+                </ul>
+                <div class="reel-card__actions">
+                  <button
+                    type="button"
+                    class="reel-card__details"
+                    [routerLink]="['/projets', project.slug]"
+                  >
+                    Détails
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </article>
     </div>
@@ -230,8 +251,9 @@
   <section class="section contact" id="contact">
     <div class="section__header">
       <p class="section__eyebrow">Contact direct</p>
-      <h2>Contact direct avec Alexandre Marsollier</h2>
     </div>
+    <h2>Contact direct avec Alexandre Marsollier</h2>
+
     <p>
       Les contacts sont simples : un email pour détailler votre besoin, un appel pour clarifier le brief ou un lien Malt
       pour contractualiser en toute sécurité.

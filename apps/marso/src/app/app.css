@@ -82,6 +82,14 @@
   text-decoration: none;
 }
 
+.site-footer__links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 @media (max-width: 720px) {
   .site-header {
     flex-direction: column;

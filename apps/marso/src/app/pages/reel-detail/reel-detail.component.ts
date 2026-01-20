@@ -3,8 +3,10 @@ import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { PortfolioProject, getPortfolioProjectBySlug } from '../../data/portfolio';
+import { SeoService } from '../../services/seo.service';
 
-const BASE_URL = 'https://m4riin.github.io/marso';
+const SITE_URL = 'https://marsolliervideo.fr';
+const OG_IMAGE = `${SITE_URL}/assets/alexandre_marsollier_monteur_video.png`;
 
 @Component({
   selector: 'app-reel-detail',
@@ -15,7 +17,6 @@ const BASE_URL = 'https://m4riin.github.io/marso';
 })
 export class ReelDetailComponent {
   protected project?: PortfolioProject;
-  protected videoSchema?: string;
   @ViewChild('detailVideo')
   protected set detailVideo(element: ElementRef<HTMLVideoElement> | undefined) {
     if (element) {
@@ -25,6 +26,7 @@ export class ReelDetailComponent {
 
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly seo = inject(SeoService);
 
   constructor() {
     this.route.paramMap.pipe(takeUntilDestroyed()).subscribe((params) => {
@@ -32,12 +34,40 @@ export class ReelDetailComponent {
       const project = slug ? getPortfolioProjectBySlug(slug) : undefined;
 
       if (!project) {
+        this.seo.setJsonLd('reel-detail', null);
         void this.router.navigateByUrl('/');
         return;
       }
 
       this.project = project;
-      this.videoSchema = this.buildVideoSchema(project);
+      const projectUrl = `${SITE_URL}/projets/${project.slug}`;
+      const title = `${project.title} — ${project.client} | Alexandre Marsollier`;
+
+      this.seo.updateTags({
+        title,
+        description: project.summary,
+        keywords: project.tags,
+        canonicalUrl: projectUrl,
+        openGraph: {
+          type: 'video.other',
+          url: projectUrl,
+          description: project.summary,
+          image: {
+            url: OG_IMAGE,
+            alt: `${project.title} — ${project.client}`,
+          },
+        },
+        twitter: {
+          card: 'summary_large_image',
+          description: project.summary,
+          image: {
+            url: OG_IMAGE,
+            alt: `${project.title} — ${project.client}`,
+          },
+        },
+      });
+
+      this.seo.setJsonLd('reel-detail', this.buildVideoSchema(project, projectUrl));
     });
   }
 
@@ -47,30 +77,26 @@ export class ReelDetailComponent {
     });
   }
 
-  private buildVideoSchema(reel: PortfolioProject): string {
-    return JSON.stringify(
-      {
-        '@context': 'https://schema.org',
-        '@type': 'VideoObject',
-        name: `${reel.title} — ${reel.client}`,
-        description: reel.summary,
-        uploadDate: `${reel.year}-01-01`,
-        inLanguage: 'fr-FR',
-        url: `${BASE_URL}/projets/${reel.slug}/`,
-        contentUrl: reel.videoUrl,
-        embedUrl: reel.videoUrl,
-        thumbnailUrl: `${BASE_URL}/og-cover.png`,
-        publisher: {
-          '@type': 'Person',
-          name: 'Alexandre Marsollier',
-          jobTitle: 'Monteur vidéo et réalisateur',
-          url: BASE_URL,
-        },
-        genre: reel.tags,
-        keywords: reel.tags.join(', '),
+  private buildVideoSchema(reel: PortfolioProject, url: string) {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: `${reel.title} — ${reel.client}`,
+      description: reel.summary,
+      uploadDate: `${reel.year}-01-01`,
+      inLanguage: 'fr-FR',
+      url,
+      contentUrl: reel.videoUrl,
+      embedUrl: reel.videoUrl,
+      thumbnailUrl: OG_IMAGE,
+      publisher: {
+        '@type': 'Person',
+        name: 'Alexandre Marsollier',
+        jobTitle: 'Monteur vidéo et réalisateur',
+        url: SITE_URL,
       },
-      null,
-      2,
-    );
+      genre: reel.tags,
+      keywords: reel.tags.join(', '),
+    };
   }
 }
