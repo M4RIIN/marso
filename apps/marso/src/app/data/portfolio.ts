@@ -205,7 +205,7 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         location: 'Marseille',
         type: 'Capsule verticale',
         aspectRatio: '9:16',
-        videoUrl: `${MEDIA_BASE_URL}inyvid_optimized_1_ston-festival-ofs-studio.mp4`,
+        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_1_ston-festival-ofs-studio.mp4`,
         tags: ['Culture', 'Vertical', 'Lifestyle'],
         accent: '#c1ff72',
         summary:
