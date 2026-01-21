@@ -1,7 +1,7 @@
 <header class="site-header" [class.site-header--hidden]="isHeaderHidden">
   <a class="site-logo" routerLink="/">
     <img class="site-logo__image" src="assets/logo.png" alt="Logo Alexandre Marsollier" />
-    <span class="site-logo__text">Alexandre Marsollier</span>
+    <span class="site-logo__text"><span class="keyword-red">Alexandre Marsollier</span></span>
   </a>
   <nav class="site-nav" aria-label="Navigation principale">
     <a
@@ -26,9 +26,9 @@
 <router-outlet></router-outlet>
 
 <footer class="site-footer">
-  <p>© {{ currentYear }} Je suis Alexandre Marsollier — réalisateur, motion designer &amp; monteur vidéo.</p>
+  <p>© {{ currentYear }} Je suis <span class="keyword-red">Alexandre Marsollier</span> — réalisateur, motion designer &amp; <span class="keyword-red">monteur vidéo</span>.</p>
   <div class="site-footer__links">
-    <a routerLink="/monteur-video">Besoin de moi comme monteur vidéo freelance&nbsp;?</a>
+    <a routerLink="/monteur-video">Besoin de moi comme <span class="keyword-red">monteur vidéo freelance</span>&nbsp;?</a>
     <a routerLink="/mentions-legales">Mentions légales</a>
   </div>
 </footer>

@@ -41,8 +41,8 @@
   flex-direction: column;
   gap: 4rem;
   background-color: var(--bg);
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
   background-size: 72px 72px;
   margin: 0;
   width: 100%;
@@ -262,7 +262,7 @@
 .section h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   margin: 0;
-  color: var(--paper-ink);
+  color: var(--bg);
 }
 
 .section p {
@@ -571,13 +571,13 @@
 
 .contact {
   text-align: center;
-  background: var(--paper);
-  color: var(--paper-ink);
-  border-color: var(--paper-ink);
+  background: var(--paper-ink);
+  color: var(--paper);
+  border-color: var(--paper);
 }
 
 .contact p {
-  color: var(--paper-muted);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .contact__list {
@@ -591,7 +591,7 @@
 }
 
 .contact__list a {
-  color: var(--paper-ink);
+  color: var(--paper);
   text-decoration: none;
   letter-spacing: 0.15em;
   text-transform: uppercase;

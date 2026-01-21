@@ -1,7 +1,7 @@
 <main class="mv-page">
   <section class="mv-hero" aria-label="Présentation du monteur vidéo">
     <p class="mv-eyebrow">À propos</p>
-    <h1>Monteur vidéo freelance &amp; alternant chargé d’audiovisuel</h1>
+    <h1><span class="keyword-red">Monteur vidéo freelance</span> &amp; alternant chargé d’audiovisuel</h1>
     <p *ngFor="let paragraph of heroParagraphs">
       {{ paragraph }}
     </p>
@@ -10,7 +10,7 @@
   <section class="mv-section mv-prestations" id="prestations">
     <div class="mv-section__header">
       <p class="mv-section__eyebrow">Prestations</p>
-      <h2>Prestations de montage vidéo</h2>
+      <h2>Prestations de <span class="keyword-red">montage vidéo</span></h2>
       <p>Accompagnement complet de l’idée au rendu final, quel que soit le format ou le canal de diffusion.</p>
     </div>
     <ul class="mv-prestations__list">
@@ -72,10 +72,10 @@
   <section class="mv-section mv-cta" aria-label="Prêt à lancer un projet">
     <p class="mv-eyebrow">Prêt à lancer un projet&nbsp;?</p>
     <h2>Brief détaillé, moodboard, rushs à organiser ou simple idée&nbsp;?</h2>
-    <p>Envoyez-moi un message et je vous propose un plan de montage dans les 48h.</p>
+    <p>Envoyez-moi un message et je vous propose un plan de <span class="keyword-red">montage</span> dans les 48h.</p>
     <div class="mv-prestations__cta">
       <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Envoyer un brief</a>
-      <a class="mv-button mv-button--ghost" routerLink="/" [fragment]="'projets'">Voir le portfolio</a>
+      <a class="mv-button mv-button--ghost" routerLink="/" [fragment]="'projets'">Voir le <span class="keyword-red">portfolio</span></a>
     </div>
   </section>
 </main>
