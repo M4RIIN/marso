@@ -49,6 +49,7 @@ type CollapsibleSection = (typeof COLLAPSIBLE_SECTIONS)[number];
 export class HomeComponent implements OnInit, OnDestroy {
   protected readonly portfolioSections: PortfolioSection[] = PORTFOLIO_SECTIONS;
   protected readonly portfolioProjects: PortfolioProject[] = PORTFOLIO_PROJECTS;
+  protected readonly faqs = HOME_FAQ;
   protected portfolioAccordionState: Record<string, boolean> = this.portfolioSections.reduce(
     (state, section) => ({ ...state, [section.title]: false }),
     {} as Record<string, boolean>,
@@ -158,7 +159,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: HOME_FAQ.map((faq) => ({
+      mainEntity: this.faqs.map((faq) => ({
         '@type': 'Question',
         name: faq.question,
         acceptedAnswer: {

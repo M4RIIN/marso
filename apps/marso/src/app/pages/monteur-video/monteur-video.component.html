@@ -49,15 +49,22 @@
     </p>
   </section>
 
-  <section class="mv-section mv-faq" id="faq">
+  <section class="mv-section mv-faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
     <div class="mv-section__header">
       <p class="mv-section__eyebrow">FAQ</p>
       <h2>Questions fréquentes</h2>
     </div>
     <dl>
-      <div *ngFor="let faq of faqs">
-        <dt>{{ faq.question }}</dt>
-        <dd>{{ faq.answer }}</dd>
+      <div
+        *ngFor="let faq of faqs"
+        itemprop="mainEntity"
+        itemscope
+        itemtype="https://schema.org/Question"
+      >
+        <dt itemprop="name">{{ faq.question }}</dt>
+        <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">{{ faq.answer }}</p>
+        </dd>
       </div>
     </dl>
   </section>
