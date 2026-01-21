@@ -205,7 +205,7 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         location: 'Marseille',
         type: 'Capsule verticale',
         aspectRatio: '9:16',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_4_capsule-club-plk-reel.mp4`,
+        videoUrl: `${MEDIA_BASE_URL}inyvid_optimized_1_ston-festival-ofs-studio.mp4`,
         tags: ['Culture', 'Vertical', 'Lifestyle'],
         accent: '#c1ff72',
         summary:
@@ -287,28 +287,6 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
           'Exports master + teaser 30s pour réseaux',
         ],
       },
-      {
-        slug: 'forum-producteur-occitanie',
-        title: 'Forum grand producteur Occitanie',
-        client: 'Occitanie Prod',
-        role: 'Montage & habillage',
-        year: '2022',
-        location: 'Montpellier',
-        type: 'After movie 9:16',
-        aspectRatio: '9:16',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_7_Respire_V3.mp4`,
-        tags: ['Territoire', 'After movie', 'Networking'],
-        accent: '#c1ff72',
-        summary:
-          'Film récap valorisant les rencontres entre producteurs, institutionnels et talents créatifs.',
-        context:
-          'Nous avons mis l’accent sur les moments off et les interviews courtes pour donner envie de rejoindre la prochaine édition.',
-        contributions: [
-          'Montage 16:9 + déclinaison vertical stories',
-          'Habillage graphique inspiré de l’affiche officielle',
-          'Gestion des exports pour diffusion écran géant',
-        ],
-      },
     ],
   },
   {
@@ -344,8 +322,8 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         role: 'Film d’inspiration',
         year: '2023',
         location: 'Paris',
-        type: 'Film luxe 16:9',
-        aspectRatio: '16:9',
+        type: 'Film luxe - format Instagram',
+        aspectRatio: '9:16',
         videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_atelier-des-maitres-louis-vuitton.mp4`,
         tags: ['Luxe', 'Motion', 'Lab'],
         accent: '#f4c6a6',
