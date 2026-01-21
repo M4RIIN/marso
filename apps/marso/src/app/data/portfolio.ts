@@ -74,6 +74,28 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
           'Exports optimisés pour diffusion mur LED et replay interne',
         ],
       },
+      {
+        slug: 'spot-publicinex-rodez',
+        title: 'Spot Publicinex Rodez',
+        client: 'Eclisse Promotion',
+        role: 'Habillage motion & montage',
+        year: '2026',
+        location: 'Toulouse',
+        type: 'Film publicitaire',
+        aspectRatio: '16:9',
+        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_3_PUB V1.mp4`,
+        tags: ['Event', 'Habillage motion', 'Typographies'],
+        accent: '#8ecdd4',
+        summary:
+          'Promotion de nouveaux logements à Rodez, en partenariat avec Publicinex. Affichage en cinéma et MégaCGR',
+        context:
+          'Renouvellement de spot publicitaire pour un nouveau logement, qui invite les particuliers à se renseigner à l\'achat.',
+        contributions: [
+          'Ecriture, storyboard, motion design et montage, étalonnage',
+          'Adaptation au format cinéma',
+          'Utilisation d\'outils IA pour animer les perspectives',
+        ],
+      },
     ],
   },
   {

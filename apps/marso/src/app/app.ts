@@ -36,8 +36,8 @@ export class App implements AfterViewInit{
     }
 
   protected readonly navItems = [
-    { label: 'Accueil', path: '/' },
-    { label: 'Monteur vidéo', path: '/monteur-video' },
+    { label: 'Portfolio', path: '/' },
+    { label: 'Besoin d\'un monteur?', path: '/monteur-video' },
   ];
   protected readonly currentYear = new Date().getFullYear();
   protected isHeaderHidden = false;

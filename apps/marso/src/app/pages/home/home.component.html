@@ -19,7 +19,7 @@
       aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
       aria-describedby="hero-video-caption"
     >
-      <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_1_AM.mp4" type="video/mp4" />
+      <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_Video marso V1.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas encore la vidéo HTML5.
     </video>
 
@@ -59,7 +59,6 @@
     </div>
   </div>
 
-  <p class="reel-hero__vertical" aria-hidden="true">/resume /curriculum vitae</p>
 </section>
 
 <main class="page">
@@ -151,9 +150,7 @@
                 <p class="reel-card__client">{{ project.client }}</p>
                 <h3>{{ project.title }}</h3>
                 <p class="reel-card__role">{{ project.role }}</p>
-                <ul class="reel-card__tags">
-                  <li *ngFor="let tag of project.tags">{{ tag }}</li>
-                </ul>
+
                 <div class="reel-card__actions">
                   <button
                     type="button"

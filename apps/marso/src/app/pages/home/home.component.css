@@ -1,5 +1,5 @@
 :host {
-  --bg: #050402;
+  --bg: #1C1B18;
   --ink: #f4e2c7;
   --muted: rgba(244, 226, 199, 0.74);
   --accent: #f7c740;
@@ -157,7 +157,7 @@
 }
 
 .reel-hero__title-block h1 {
-  font-size: clamp(3rem, 10vw, 6rem);
+  font-size: clamp(2rem, 3.5vw, 6rem);
   font-weight: 600;
   margin: 0;
   line-height: 1;
@@ -418,13 +418,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-width: 720px;
 }
 
 .portfolio-section__eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.35em;
-  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  font-size: 1.4rem;
   color: rgba(244, 226, 199, 0.65);
   margin: 0;
 }
@@ -433,6 +432,7 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+  font-size: 2vh;
 }
 
 .portfolio-section__toggle {
@@ -441,8 +441,8 @@
   height: 48px;
   border-radius: 999px;
   border: 1px solid rgba(247, 199, 64, 0.25);
-  background: rgba(8, 8, 8, 0.6);
-  color: var(--ink);
+  background: #EFCD3D;
+  color: black;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -454,6 +454,7 @@
 .portfolio-section__toggle:focus-visible {
   border-color: rgba(247, 199, 64, 0.6);
   background: rgba(10, 10, 10, 0.85);
+  color:#EFCD3D;
 }
 
 .portfolio-section__toggle:focus-visible {
