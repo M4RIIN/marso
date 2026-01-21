@@ -1,45 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.equipe4.fr/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+    <loc>https://marsolliervideo.fr/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/monteur-video/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+    <loc>https://marsolliervideo.fr/monteur-video/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/projets/capsule-club/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://marsolliervideo.fr/mentions-legales/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/motion-brs/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/projets/ston-festival/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://marsolliervideo.fr/projets/seminaire-upgrader/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/projets/atelier-des-maitres/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://marsolliervideo.fr/projets/video-l-mattei/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/projets/pulse-campus/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://marsolliervideo.fr/projets/fresque-v6/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.equipe4.fr/projets/international-sante/</loc>
-    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://marsolliervideo.fr/projets/interview-ecologie/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/telepilotage/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/vertical-respire/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/vertical-ofs/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/vertical-montbrun/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/vertical-international-sante/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/forum-2021/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/forum-producteur-occitanie/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/lab-plk/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/lab-louis-vuitton/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/lab-istef/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/lab-effluve-nocturne/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marsolliervideo.fr/projets/lab-making-off/</loc>
+    <lastmod>2026-01-21T10:29:03+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
