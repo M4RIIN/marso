@@ -147,27 +147,6 @@ export const PORTFOLIO_SECTIONS: PortfolioSection[] = [
         ],
       },
       {
-        slug: 'interview-ecologie',
-        title: 'Interview Écologie',
-        client: 'Initiative Climat',
-        role: 'Montage & sous-titres multilingues',
-        year: '2022',
-        location: 'Montpellier',
-        type: 'Interview double cadre',
-        aspectRatio: '9:16',
-        videoUrl: `${MEDIA_BASE_URL}tinyvid_optimized_3_international-sante-campagne-social.mp4`,
-        tags: ['Écologie', 'Interviews', 'Sous-titres'],
-        accent: '#ff72aa',
-        summary: 'Conversation croisée entre experts climat et industriels.',
-        context:
-          "La mission : rendre accessible un échange dense. J'ai favorisé une structure en chapitres avec des intertitres animés et des incrustations data.",
-        contributions: [
-          'Montage bidirectionnel avec coupe dans l’axe',
-          'Sous-titres FR/EN synchronisés',
-          'Livraison d’un kit réseaux sociaux pour extraire des clips',
-        ],
-      },
-      {
         slug: 'telepilotage',
         title: 'Télépilotage',
         client: 'AeroLab',
