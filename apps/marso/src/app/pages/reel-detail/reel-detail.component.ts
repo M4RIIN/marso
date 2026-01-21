@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { PortfolioProject, getPortfolioProjectBySlug } from '../../data/portfolio';
@@ -15,7 +15,7 @@ const OG_IMAGE = `${SITE_URL}/assets/alexandre_marsollier_monteur_video.png`;
   templateUrl: './reel-detail.component.html',
   styleUrl: './reel-detail.component.css',
 })
-export class ReelDetailComponent {
+export class ReelDetailComponent implements OnDestroy {
   protected project?: PortfolioProject;
   @ViewChild('detailVideo')
   protected set detailVideo(element: ElementRef<HTMLVideoElement> | undefined) {
@@ -98,5 +98,9 @@ export class ReelDetailComponent {
       genre: reel.tags,
       keywords: reel.tags.join(', '),
     };
+  }
+
+  ngOnDestroy(): void {
+    this.seo.setJsonLd('reel-detail', null);
   }
 }

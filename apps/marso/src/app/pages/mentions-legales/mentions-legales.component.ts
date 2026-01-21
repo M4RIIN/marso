@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 
 const SITE_URL = 'https://marsolliervideo.fr';
@@ -19,7 +19,7 @@ interface LegalContactItem {
   templateUrl: './mentions-legales.component.html',
   styleUrl: './mentions-legales.component.css',
 })
-export class MentionsLegalesComponent implements OnInit {
+export class MentionsLegalesComponent implements OnInit, OnDestroy {
   protected readonly lastUpdated = new Intl.DateTimeFormat('fr-FR', {
     month: 'long',
     year: 'numeric',
@@ -74,6 +74,10 @@ export class MentionsLegalesComponent implements OnInit {
     });
 
     this.seo.setJsonLd('legal', this.buildLegalStructuredData());
+  }
+
+  ngOnDestroy(): void {
+    this.seo.setJsonLd('legal', null);
   }
 
   private buildLegalStructuredData() {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
 
@@ -24,7 +24,7 @@ interface Faq {
   templateUrl: './monteur-video.component.html',
   styleUrl: './monteur-video.component.css',
 })
-export class MonteurVideoComponent implements OnInit {
+export class MonteurVideoComponent implements OnInit, OnDestroy {
   protected readonly heroParagraphs = [
     "Je suis Alexandre Marsollier, monteur vidéo et alternant chargé d’audiovisuel. Après plusieurs expériences professionnelles en entreprise et auprès de clients variés, j’accompagne les structures qui souhaitent communiquer avec de la vidéo claire, rythmée et authentique.",
     'Basé à Toulouse, je travaille sur place ou à distance selon vos besoins et j’assure un accompagnement complet : brief, montage, habillage, corrections et livraison optimisée pour vos plateformes.',
@@ -122,6 +122,11 @@ export class MonteurVideoComponent implements OnInit {
 
     this.seo.setJsonLd('monteur-service', this.buildServiceStructuredData());
     this.seo.setJsonLd('monteur-faq', this.buildFaqStructuredData());
+  }
+
+  ngOnDestroy(): void {
+    this.seo.setJsonLd('monteur-service', null);
+    this.seo.setJsonLd('monteur-faq', null);
   }
 
   private buildServiceStructuredData() {

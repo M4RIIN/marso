@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AutoplayOnVisibleDirective } from '../../directives/autoplay-on-visible.directive';
 import {
@@ -46,7 +46,7 @@ type CollapsibleSection = (typeof COLLAPSIBLE_SECTIONS)[number];
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   protected readonly portfolioSections: PortfolioSection[] = PORTFOLIO_SECTIONS;
   protected readonly portfolioProjects: PortfolioProject[] = PORTFOLIO_PROJECTS;
   protected portfolioAccordionState: Record<string, boolean> = this.portfolioSections.reduce(
@@ -93,6 +93,11 @@ export class HomeComponent implements OnInit {
 
     this.seo.setJsonLd('home-reels', this.buildVideoStructuredData());
     this.seo.setJsonLd('home-faq', this.buildFaqStructuredData());
+  }
+
+  ngOnDestroy(): void {
+    this.seo.setJsonLd('home-reels', null);
+    this.seo.setJsonLd('home-faq', null);
   }
 
   protected toggleSection(section: CollapsibleSection): void {
