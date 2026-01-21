@@ -109,6 +109,7 @@
               *ngFor="let project of section.projects"
               role="listitem"
               [style.--reel-accent]="project.accent"
+              [attr.data-aspect]="project.aspectRatio"
               aria-label="Projet {{ project.client }} - {{ project.title }}"
             >
               <div class="reel-card__header">
@@ -122,7 +123,6 @@
                 aria-label="Voir le détail du projet {{ project.client }} - {{ project.title }}"
               >
                 <figure class="reel-card__figure">
-                  <div class="reel-card__perfs reel-card__perfs--left" aria-hidden="true"></div>
                   <div class="reel-card__video-shell" [attr.data-aspect]="project.aspectRatio">
                     <video
                       class="reel-card__video"
@@ -141,7 +141,6 @@
                       Votre navigateur ne supporte pas encore la vidéo HTML5.
                     </video>
                   </div>
-                  <div class="reel-card__perfs reel-card__perfs--right" aria-hidden="true"></div>
                   <figcaption class="reel-card__caption" [attr.id]="'project-' + project.slug + '-caption'">
                     {{ project.title }} — {{ project.client }}
                   </figcaption>

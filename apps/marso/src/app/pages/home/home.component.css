@@ -575,10 +575,6 @@
 }
 
 .reel-card__figure {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 0.5rem;
-  align-items: stretch;
   margin: 0;
 }
 
@@ -586,37 +582,6 @@
   outline: 2px solid var(--reel-accent, rgba(247, 199, 64, 0.8));
   border-radius: 32px;
   outline-offset: 6px;
-}
-
-.reel-card__perfs {
-  width: 18px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.9), rgba(4, 4, 4, 0.6));
-  position: relative;
-}
-
-.reel-card__perfs::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 12px,
-    rgba(0, 0, 0, 0.8) 12px,
-    rgba(0, 0, 0, 0.8) 22px
-  );
-  border-radius: inherit;
-  mix-blend-mode: screen;
-  opacity: 0.5;
-}
-
-.reel-card__perfs::after {
-  content: '';
-  position: absolute;
-  inset: 4px;
-  border-radius: inherit;
-  border: 1px solid rgba(247, 199, 64, 0.1);
 }
 
 .reel-card__video-shell {
@@ -868,6 +833,11 @@
 
   .section {
     padding: 2rem 1.5rem;
+  }
+
+  .section.projects {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
