@@ -1,8 +1,9 @@
 :host {
   display: block;
-  background: radial-gradient(circle at top, rgba(94, 234, 212, 0.1), transparent 45%) #030712;
-  color: #f8fafc;
+  background: var(--brand-red);
+  color: var(--brand-white);
   min-height: 100vh;
+  font-family: 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 .legal-page {
@@ -12,6 +13,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
 .legal-page__intro {
@@ -19,38 +23,45 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background: var(--brand-white-strong);
+  color: var(--brand-ink);
+  border: 6px solid var(--brand-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: -20px 20px 0 rgba(0, 0, 0, 0.18);
 }
 
 .legal-page__eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   font-size: 0.85rem;
-  color: rgba(148, 163, 184, 0.9);
+  color: var(--brand-blue-bright);
 }
 
 .legal-page__date {
-  font-size: 0.9rem;
-  color: rgba(148, 163, 184, 0.9);
+  font-size: 0.95rem;
+  color: rgba(28, 3, 3, 0.7);
 }
 
 .legal-card {
   padding: 2rem;
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  border: 5px solid var(--brand-white);
   border-radius: 1rem;
-  background: rgba(15, 23, 42, 0.65);
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.6);
+  background: var(--brand-white-strong);
+  color: var(--brand-ink);
+  box-shadow: -18px 18px 0 rgba(0, 0, 0, 0.18);
 }
 
 .legal-card h2 {
   margin-bottom: 1rem;
   font-size: 1.4rem;
-  color: #f8fafc;
+  color: var(--brand-ink);
 }
 
 .legal-card p,
 .legal-card li,
 .legal-card dd {
-  color: rgba(226, 232, 240, 0.9);
+  color: rgba(28, 3, 3, 0.74);
   line-height: 1.7;
 }
 
@@ -62,7 +73,9 @@
 
 .legal-card dt {
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.9);
+  color: var(--brand-blue-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
 .legal-card dd {
@@ -70,14 +83,16 @@
 }
 
 .legal-card a {
-  color: rgba(94, 234, 212, 0.95);
+  color: var(--brand-blue);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .legal-card ul {
   padding-left: 1.25rem;
   margin: 1rem 0;
-  list-style: disc;
+  list-style: square;
+  color: rgba(28, 3, 3, 0.74);
 }
 
 @media (max-width: 720px) {
@@ -85,7 +100,8 @@
     grid-template-columns: 1fr;
   }
 
-  .legal-card {
+  .legal-card,
+  .legal-page__intro {
     padding: 1.5rem;
   }
 }
