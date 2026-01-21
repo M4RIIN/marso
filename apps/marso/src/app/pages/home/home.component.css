@@ -270,6 +270,7 @@
   justify-content: space-between;
   gap: 1.25rem;
   margin-bottom: 1.25rem;
+  flex-direction: column;
 }
 
 .section__header-text {

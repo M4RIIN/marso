@@ -136,7 +136,7 @@
 
 .reel-detail__media[data-aspect='16:9'] .reel-detail__video {
   aspect-ratio: 16 / 9;
-  max-width: min(720px, 100%);
+  max-width: min(1080px, 100%);
 }
 
 .reel-detail__media[data-aspect='16:9'] {
