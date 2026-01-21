@@ -1,5 +1,5 @@
 <section class="reel-detail" *ngIf="project as detail; else loading" [style.--reel-accent]="detail.accent">
-  <div class="reel-detail__layout">
+  <div class="reel-detail__layout" [attr.data-aspect]="detail.aspectRatio">
     <div class="reel-detail__media" [attr.data-aspect]="detail.aspectRatio">
       <div class="reel-detail__filmstrip" aria-hidden="true">
         <span></span>

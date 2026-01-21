@@ -29,6 +29,32 @@
     flex-direction: row;
     align-items: flex-start;
   }
+
+  /* Keep 16:9 reels stacked like on mobile for better focus */
+  .reel-detail__layout[data-aspect='16:9'] {
+    flex-direction: column;
+    align-items: center;
+    max-width: min(1040px, 100%);
+    margin-inline: auto;
+  }
+
+  .reel-detail__layout[data-aspect='16:9'] .reel-detail__media {
+    flex: 1 1 auto;
+    position: static;
+    top: auto;
+    height: auto;
+    max-height: none;
+    width: 100%;
+    padding-left: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .reel-detail__layout[data-aspect='16:9'] .reel-detail__filmstrip {
+    display: none;
+  }
+
+  .reel-detail__layout[data-aspect='16:9'] .reel-detail__body {
+    width: 100%;
+  }
 }
 
 .reel-detail__media {
