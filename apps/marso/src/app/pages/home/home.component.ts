@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.seo.setJsonLd('home-reels', this.buildVideoStructuredData());
-    this.seo.setJsonLd('home-faq', this.buildFaqStructuredData());
   }
 
   ngOnDestroy(): void {
@@ -155,18 +154,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
   }
 
-  private buildFaqStructuredData() {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: this.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    };
-  }
 }
