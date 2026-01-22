@@ -81,6 +81,14 @@
   transform: translate(-2px, -2px);
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .header-cta {
   text-decoration: none;
   padding: 0.9rem 1.4rem;
@@ -98,6 +106,19 @@
 .header-cta:hover {
   transform: translate(-3px, -3px);
   box-shadow: -10px 10px 0 var(--brand-white);
+}
+
+.header-cta--ghost {
+  background: transparent;
+  color: var(--brand-white);
+  border-color: var(--brand-white);
+  box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header-cta--ghost:hover {
+  background: var(--brand-white);
+  color: var(--brand-ink);
+  box-shadow: -10px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .site-footer {
@@ -136,5 +157,10 @@
   .site-nav a {
     flex: 1;
     text-align: center;
+  }
+
+  .site-header__actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 }

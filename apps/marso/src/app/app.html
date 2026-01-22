@@ -13,14 +13,23 @@
       {{ item.label }}
     </a>
   </nav>
-  <a
-    class="header-cta"
-    href="https://www.malt.fr/profile/alexandremarsollier"
-    target="_blank"
-    rel="noopener"
-  >
-    Mon profil Malt
-  </a>
+  <div class="site-header__actions">
+    <a
+      class="header-cta header-cta--ghost"
+      routerLink="/"
+      fragment="contact"
+    >
+      Contact direct
+    </a>
+    <a
+      class="header-cta"
+      href="https://www.malt.fr/profile/alexandremarsollier"
+      target="_blank"
+      rel="noopener"
+    >
+      Mon profil Malt
+    </a>
+  </div>
 </header>
 
 <router-outlet></router-outlet>
