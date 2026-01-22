@@ -121,7 +121,6 @@ export class MonteurVideoComponent implements OnInit, OnDestroy {
     });
 
     this.seo.setJsonLd('monteur-service', this.buildServiceStructuredData());
-    this.seo.setJsonLd('monteur-faq', this.buildFaqStructuredData());
   }
 
   ngOnDestroy(): void {
@@ -160,21 +159,6 @@ export class MonteurVideoComponent implements OnInit, OnDestroy {
           },
         })),
       },
-    };
-  }
-
-  private buildFaqStructuredData() {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: this.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
     };
   }
 }
