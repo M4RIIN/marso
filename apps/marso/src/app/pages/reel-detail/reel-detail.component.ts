@@ -13,7 +13,6 @@ const OG_IMAGE = `${SITE_URL}/assets/alexandre_marsollier_monteur_video.png`;
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './reel-detail.component.html',
-  styleUrl: './reel-detail.component.css',
 })
 export class ReelDetailComponent implements OnDestroy {
   protected project?: PortfolioProject;

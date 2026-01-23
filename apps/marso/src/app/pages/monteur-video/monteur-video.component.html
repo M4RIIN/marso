@@ -1,69 +1,106 @@
-<main class="mv-page">
-  <section class="mv-hero" aria-label="Présentation du monteur vidéo">
-    <p class="mv-eyebrow">À propos</p>
-    <h1><span class="keyword-red">Monteur vidéo freelance</span> &amp; alternant chargé d’audiovisuel</h1>
-    <p *ngFor="let paragraph of heroParagraphs">
-      {{ paragraph }}
-    </p>
-  </section>
-
-  <section class="mv-section mv-prestations" id="prestations">
-    <div class="mv-section__header">
-      <p class="mv-section__eyebrow">Prestations</p>
-      <h2>Prestations de <span class="keyword-red">montage vidéo</span></h2>
-      <p>Accompagnement complet de l’idée au rendu final, quel que soit le format ou le canal de diffusion.</p>
+<main class="mx-auto mt-32 flex max-w-5xl flex-col gap-10 px-4 pb-20 text-zinc-100">
+  <section class="rounded-[2.5rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl md:px-12" aria-label="Présentation du monteur vidéo">
+    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">À propos</p>
+    <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+      Monteur vidéo freelance &amp; alternant chargé d’audiovisuel
+    </h1>
+    <div class="mt-5 space-y-4 text-lg text-zinc-300">
+      <p *ngFor="let paragraph of heroParagraphs">{{ paragraph }}</p>
     </div>
-    <ul class="mv-prestations__list">
-      <li *ngFor="let item of prestations">{{ item }}</li>
-    </ul>
-    <div class="mv-prestations__cta">
-      <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Demandez un devis</a>
-      <a class="mv-button mv-button--ghost" routerLink="/" [fragment]="'projets'">Voir mes réalisations</a>
+    <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.45em]">
+      <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="mailto:alexandre.marsollier05@gmail.com">
+        Parler du projet
+      </a>
+      <a class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10" routerLink="/" [fragment]="'projets'">
+        Voir le portfolio
+      </a>
     </div>
   </section>
 
-  <section class="mv-section mv-method" id="methode">
-    <div class="mv-section__header">
-      <p class="mv-section__eyebrow">Méthode</p>
-      <h2>Méthode</h2>
-      <p>Un process documenté qui sécurise chaque étape, en présentiel à Toulouse ou à distance.</p>
+  <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="prestations">
+    <div class="flex flex-col gap-3 border-b border-white/5 pb-6">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Prestations</p>
+      <h2 class="text-3xl font-semibold">Services de montage vidéo</h2>
+      <p class="text-zinc-300">
+        De l’idée au rendu final : je sécurise la narration, l’habillage et les exports, quel que soit le canal de diffusion.
+      </p>
     </div>
-    <ol class="mv-method__steps">
-      <li *ngFor="let step of methodSteps">
-        <span>{{ step.title }}</span>
-        <p>{{ step.detail }}</p>
+    <ul class="mt-6 grid gap-4 md:grid-cols-2">
+      <li
+        *ngFor="let item of prestations"
+        class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-semibold uppercase tracking-[0.35em] text-white"
+      >
+        {{ item }}
       </li>
-    </ol>
+    </ul>
   </section>
 
-
-  <section class="mv-section mv-faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
-    <div class="mv-section__header">
-      <p class="mv-section__eyebrow">FAQ</p>
-      <h2>Questions fréquentes</h2>
+  <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]" id="methode">
+    <div class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+      <div class="flex flex-col gap-2 border-b border-white/5 pb-4">
+        <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Méthode</p>
+        <h2 class="text-3xl font-semibold">Process documenté</h2>
+        <p class="text-zinc-300">
+          Sessions supervisées à Toulouse ou à distance, avec étapes claires et retours tracés.
+        </p>
+      </div>
+      <ol class="mt-6 space-y-4">
+        <li
+          *ngFor="let step of methodSteps"
+          class="rounded-2xl border border-white/10 bg-black/30 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
+        >
+          <span class="text-xs uppercase tracking-[0.45em] text-fuchsia-200/80">{{ step.title }}</span>
+          <p class="mt-2 text-base text-zinc-300">{{ step.detail }}</p>
+        </li>
+      </ol>
     </div>
-    <dl>
+
+    <div class="rounded-[2rem] border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Outils</p>
+      <h2 class="mt-3 text-2xl font-semibold">Stack créative</h2>
+      <p class="mt-3 text-sm text-zinc-400">{{ skillsSummary }}</p>
+      <ul class="mt-6 space-y-3">
+        <li *ngFor="let skill of skills" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/90">
+          {{ skill }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="flex flex-col gap-2 border-b border-white/5 pb-4">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">FAQ</p>
+      <h2 class="text-3xl font-semibold">Questions fréquentes</h2>
+    </div>
+    <dl class="mt-6 grid gap-5 md:grid-cols-2">
       <div
         *ngFor="let faq of faqs"
         itemprop="mainEntity"
         itemscope
         itemtype="https://schema.org/Question"
+        class="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
       >
-        <dt itemprop="name">{{ faq.question }}</dt>
-        <dd itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+        <dt class="text-sm uppercase tracking-[0.35em] text-fuchsia-200/80" itemprop="name">{{ faq.question }}</dt>
+        <dd class="mt-3 text-base text-zinc-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
           <p itemprop="text">{{ faq.answer }}</p>
         </dd>
       </div>
     </dl>
   </section>
 
-  <section class="mv-section mv-cta" aria-label="Prêt à lancer un projet">
-    <p class="mv-eyebrow">Prêt à lancer un projet&nbsp;?</p>
-    <h2>Brief détaillé, moodboard, rushs à organiser ou simple idée&nbsp;?</h2>
-    <p>Envoyez-moi un message et je vous propose un plan de <span class="keyword-red">montage</span> dans les 48h.</p>
-    <div class="mv-prestations__cta">
-      <a class="mv-button" href="mailto:alexandre.marsollier05@gmail.com">Envoyer un brief</a>
-      <a class="mv-button " routerLink="/" [fragment]="'projets'">Voir le <span class="keyword-red">portfolio</span></a>
+  <section class="rounded-[2.5rem] border border-white/10 bg-zinc-950/70 px-6 py-10 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" aria-label="Prêt à lancer un projet">
+    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Prêt à lancer un projet&nbsp;?</p>
+    <h2 class="mt-4 text-3xl font-semibold">Brief détaillé, moodboard ou simple intention&nbsp;?</h2>
+    <p class="mt-3 text-base text-zinc-300">
+      Envoyez vos rushs, planches ou objectifs : je vous réponds sous 48h avec un plan de montage, un devis Malt et un timeline de livraison.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.45em]">
+      <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="mailto:alexandre.marsollier05@gmail.com">
+        Envoyer un brief
+      </a>
+      <a class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10" routerLink="/" [fragment]="'projets'">
+        Explorer les projets
+      </a>
     </div>
   </section>
 </main>

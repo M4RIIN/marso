@@ -29,34 +29,19 @@ const HOME_FAQ = [
       'Absolument. Mon background en motion design me permet de vulgariser des sujets complexes tout en conservant une direction artistique premium.',
   },
 ];
-const COLLAPSIBLE_SECTIONS = [
-  'projets',
-  'a-propos',
-  'monteur-video',
-  'seo-snippet',
-  'faq',
-  'contact',
-] as const;
-type CollapsibleSection = (typeof COLLAPSIBLE_SECTIONS)[number];
-
 @Component({
   selector: 'app-home-view',
   standalone: true,
   imports: [CommonModule, AutoplayOnVisibleDirective, RouterLink],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit, OnDestroy {
   protected readonly portfolioSections: PortfolioSection[] = PORTFOLIO_SECTIONS;
   protected readonly portfolioProjects: PortfolioProject[] = PORTFOLIO_PROJECTS;
   protected readonly faqs = HOME_FAQ;
   protected portfolioAccordionState: Record<string, boolean> = this.portfolioSections.reduce(
-    (state, section) => ({ ...state, [section.title]: false }),
+    (state, section, index) => ({ ...state, [section.title]: index === 0 }),
     {} as Record<string, boolean>,
-  );
-  protected sectionState: Record<CollapsibleSection, boolean> = COLLAPSIBLE_SECTIONS.reduce(
-    (state, section) => ({ ...state, [section]: false }),
-    {} as Record<CollapsibleSection, boolean>,
   );
 
   private readonly seo = inject(SeoService);
@@ -98,17 +83,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.seo.setJsonLd('home-reels', null);
     this.seo.setJsonLd('home-faq', null);
-  }
-
-  protected toggleSection(section: CollapsibleSection): void {
-    this.sectionState = {
-      ...this.sectionState,
-      [section]: !this.sectionState[section],
-    };
-  }
-
-  protected isSectionOpen(section: CollapsibleSection): boolean {
-    return this.sectionState[section];
   }
 
   protected togglePortfolioSection(title: string): void {

@@ -22,7 +22,6 @@ interface Faq {
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './monteur-video.component.html',
-  styleUrl: './monteur-video.component.css',
 })
 export class MonteurVideoComponent implements OnInit, OnDestroy {
   protected readonly heroParagraphs = [

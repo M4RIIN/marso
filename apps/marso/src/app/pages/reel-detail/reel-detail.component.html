@@ -1,72 +1,74 @@
-<section class="reel-detail" *ngIf="project as detail; else loading" [style.--reel-accent]="detail.accent">
-  <div class="reel-detail__layout" [attr.data-aspect]="detail.aspectRatio">
-    <div class="reel-detail__media" [attr.data-aspect]="detail.aspectRatio">
-      <div class="reel-detail__filmstrip" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+<section class="mx-auto mt-32 max-w-6xl px-4 pb-20 text-zinc-100" *ngIf="project as detail; else loading">
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,420px)_1fr]">
+    <figure class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-4 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl lg:sticky lg:top-28" [attr.data-aspect]="detail.aspectRatio">
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-black/70 shadow-[0_25px_60px_rgba(4,2,13,0.65)]">
+        <video
+          #detailVideo
+          class="h-full w-full object-cover"
+          controls
+          preload="metadata"
+          playsinline
+          autoplay
+          muted
+          poster="https://www.marsolliervideo.fr/og-cover.png"
+          [attr.title]="detail.title + ' — ' + detail.client"
+          [attr.aria-label]="detail.title + ' — ' + detail.client"
+          aria-describedby="detail-video-caption"
+        >
+          <source [src]="detail.videoUrl" type="video/mp4" />
+          Votre navigateur ne supporte pas encore la vidéo HTML5.
+        </video>
       </div>
+      <figcaption id="detail-video-caption" class="mt-4 text-center text-xs uppercase tracking-[0.4em] text-zinc-500">
+        {{ detail.title }} — {{ detail.client }} · {{ detail.type }}
+      </figcaption>
+    </figure>
 
-      <figure class="reel-detail__figure">
-        <div class="reel-detail__video-shell">
-          <video
-            #detailVideo
-            class="reel-detail__video"
-            controls
-            preload="metadata"
-            playsinline
-            autoplay
-            muted
-            poster="https://www.marsolliervideo.fr/og-cover.png"
-            [attr.title]="detail.title + ' — ' + detail.client"
-            [attr.aria-label]="detail.title + ' — ' + detail.client"
-            aria-describedby="detail-video-caption"
-          >
-            <source [src]="detail.videoUrl" type="video/mp4" />
-            Votre navigateur ne supporte pas encore la vidéo HTML5.
-          </video>
-        </div>
-        <figcaption id="detail-video-caption" class="reel-detail__caption">
-          {{ detail.title }} — {{ detail.client }} · {{ detail.type }}
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="reel-detail__body">
-      <header class="reel-detail__header">
-        <p class="reel-detail__eyebrow">
+    <div class="space-y-8">
+      <header class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+        <p class="text-xs uppercase tracking-[0.4em] text-zinc-400">
           {{ detail.type }} · {{ detail.location }} · {{ detail.year }}
         </p>
-        <h1>{{ detail.title }}</h1>
-        <p class="reel-detail__client">{{ detail.client }}</p>
-        <p class="reel-detail__summary">{{ detail.summary }}</p>
-
-        <div class="reel-detail__tags">
-          <span *ngFor="let tag of detail.tags">{{ tag }}</span>
+        <h1 class="mt-4 text-4xl font-semibold text-white">{{ detail.title }}</h1>
+        <p class="text-xs uppercase tracking-[0.4em] text-zinc-500">{{ detail.client }}</p>
+        <p class="mt-4 text-base text-zinc-300">{{ detail.summary }}</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            *ngFor="let tag of detail.tags"
+            class="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.35em] text-white/80"
+          >
+            {{ tag }}
+          </span>
         </div>
       </header>
 
-      <div class="reel-detail__grid">
-        <article>
-          <h2>Contexte</h2>
-          <p>{{ detail.context }}</p>
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="rounded-[2rem] border border-white/10 bg-zinc-950/70 px-6 py-6 text-zinc-300 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+          <h2 class="text-xl font-semibold text-white">Contexte</h2>
+          <p class="mt-3 text-base">{{ detail.context }}</p>
         </article>
-        <article>
-          <h2>Contributions</h2>
-          <ul>
-            <li *ngFor="let contribution of detail.contributions">{{ contribution }}</li>
+        <article class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-6 text-zinc-300 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+          <h2 class="text-xl font-semibold text-white">Contributions</h2>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li *ngFor="let contribution of detail.contributions" class="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+              {{ contribution }}
+            </li>
           </ul>
         </article>
       </div>
 
-      <a class="reel-detail__back" routerLink="/">← Retour aux projets</a>
+      <a
+        class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-zinc-900 shadow-sm transition hover:-translate-y-0.5"
+        routerLink="/"
+      >
+        ← Retour aux projets
+      </a>
     </div>
   </div>
 </section>
 
 <ng-template #loading>
-  <div class="reel-detail__loading">
+  <div class="mx-auto mt-32 max-w-3xl rounded-3xl border border-white/10 bg-white/5 px-6 py-10 text-center text-white shadow-[0_0_0_1px_rgba(255,255,255,0.05)]">
     Chargement du projet…
   </div>
 </ng-template>

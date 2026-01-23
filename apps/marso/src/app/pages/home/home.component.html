@@ -1,165 +1,177 @@
-<section class="reel-hero" aria-label="Ma présentation de réalisateur et monteur vidéo">
-  <div class="reel-hero__filmstrip" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+<section class="relative isolate overflow-hidden px-4 pt-32 text-zinc-100" aria-label="Présentation de réalisateur et monteur vidéo">
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl"></div>
+    <div class="absolute -bottom-40 left-12 h-[520px] w-[520px] rounded-full bg-cyan-500/20 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(0,0,0,0.55))]"></div>
   </div>
 
-  <figure class="reel-hero__video-frame">
-    <video
-      class="reel-hero__video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      appAutoplayOnVisible
-      title="Showreel Alexandre Marsollier"
-      aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
-      aria-describedby="hero-video-caption"
-    >
-      <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_VideomarsoV2.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas encore la vidéo HTML5.
-    </video>
+  <div class="relative mx-auto grid max-w-6xl gap-10 rounded-[2.5rem] border border-white/10 bg-zinc-950/70 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-3xl md:p-12 lg:grid-cols-[minmax(0,1fr)_360px]">
+    <div class="space-y-8">
+      <div class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+        <span class="h-2 w-2 rounded-full bg-emerald-400/80"></span>
+        Freelance · Toulouse
+      </div>
 
-  </figure>
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Alexandre Marsollier</p>
+        <h1 class="text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+          Monteur vidéo &amp; motion designer
+          <span class="block bg-gradient-to-r from-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
+            pour raconter vos lancements
+          </span>
+        </h1>
+        <p class="text-pretty text-lg text-zinc-300 md:text-xl">
+          Films de marque, capsules verticales, interviews dynamiques et habillage motion.
+          Je soigne la narration, l’étalonnage et la post-prod pour livrer des assets prêts à publier.
+        </p>
+      </div>
 
-  <div class="reel-hero__overlay" aria-hidden="true"></div>
-  <div class="reel-hero__grain" aria-hidden="true"></div>
+      <ul class="grid gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-zinc-200 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center">Montage &amp; post-prod</li>
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center">Captations légères</li>
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center">Motion &amp; habillage</li>
+        <li class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center">Livrables 16:9 &amp; 9:16</li>
+      </ul>
 
-  <div class="reel-hero__inner">
-    <div class="hero-pill">
-      <span class="keyword-red">video</span>
-      <span class="keyword-red">monteur</span>
+      <div class="flex flex-wrap gap-3">
+        <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="#projets">
+          Voir les projets
+        </a>
+        <a class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-white transition hover:bg-white/10" routerLink="/monteur-video">
+          Offre monteur vidéo
+        </a>
+      </div>
+
+      <dl class="grid gap-4 text-xs uppercase tracking-[0.35em] text-zinc-400 sm:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+          <dt class="text-[0.65rem] text-zinc-500">Formats</dt>
+          <dd class="mt-2 text-base font-semibold tracking-normal text-white">Brand films · Social first</dd>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+          <dt class="text-[0.65rem] text-zinc-500">Stack</dt>
+          <dd class="mt-2 text-base font-semibold tracking-normal text-white">Frame.io · Notion · Resolve</dd>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+          <dt class="text-[0.65rem] text-zinc-500">Livraison</dt>
+          <dd class="mt-2 text-base font-semibold tracking-normal text-white">48h à 4 semaines</dd>
+        </div>
+      </dl>
     </div>
 
-    <div class="reel-hero__title-block">
-      <p class="hero__eyebrow"><span class="keyword-red">Alexandre Marsollier</span></p>
-      <h1>
-        <span><span class="keyword-red">Monteur vidéo freelance</span> &amp; motion designer</span>
-        <span class="hero__script" aria-hidden="true">à Toulouse</span>
-      </h1>
-      <p class="hero__subtitle">
-        Je réalise des vidéos dynamiques pour entreprises, startups, associations et
-        créateurs : interviews, vidéos événementielles, capsules sociales et contenus
-        adaptés aux réseaux.
-      </p>
-    </div>
-
-    <ul class="hero__highlights">
-      <li><span class="keyword-red">Montage</span> &amp; post-production</li>
-      <li>Interviews et captation légère</li>
-      <li>Titres animés &amp; habillage graphique</li>
-      <li>Livrables 16:9 &amp; formats verticaux</li>
-    </ul>
-
-    <div class="hero__actions">
-      <a class="hero__cta" href="#projets" aria-label="Voir mes projets">Découvrir mes projets</a>
-    </div>
+    <figure class="relative rounded-[2rem] border border-white/10 bg-black/70 p-4 shadow-[0_25px_90px_rgba(4,2,13,0.85)]">
+      <div class="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-br from-fuchsia-500/20 via-cyan-400/20 to-transparent blur-3xl"></div>
+      <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/70">
+        <video
+          class="h-[440px] w-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          appAutoplayOnVisible
+          poster="https://www.marsolliervideo.fr/og-cover.png"
+          title="Showreel Alexandre Marsollier"
+          aria-label="Showreel d'Alexandre Marsollier montrant des extraits de films"
+          aria-describedby="hero-video-caption"
+        >
+          <source data-src="https://m4riin.github.io/marso_media/tinyvid_optimized_VideomarsoV2.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas encore la vidéo HTML5.
+        </video>
+      </div>
+      <figcaption id="hero-video-caption" class="relative mt-3 text-center text-xs uppercase tracking-[0.45em] text-zinc-400">
+        Showreel motion &amp; montage
+      </figcaption>
+    </figure>
   </div>
-
 </section>
 
-<main class="page">
-  <section class="section projects" id="projets">
-    <header class="section__header">
-      <p class="section__eyebrow"><span class="keyword-red">Portfolio</span></p>
-      <h2><span class="keyword-red">Portfolio</span> de montages vidéo <span class="keyword-red">freelance</span> pilotés de bout en bout</h2>
-      <p>
-        Chaque sous-section représente une famille de briefs que je pilote régulièrement en tant que <span class="keyword-red">monteur
-        vidéo freelance</span> toulousain. Que ce soit en vertical social ou en 16:9 pour le web, je garde la même exigence :
-        direction artistique, <span class="keyword-red">montage</span> premium et pilotage technique documenté.
+<main class="relative z-0 mx-auto mt-16 flex max-w-6xl flex-col gap-12 px-4 pb-16 text-zinc-100" id="projets">
+  <section class="rounded-[2.5rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl md:px-12">
+    <header class="space-y-4">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Portfolio</p>
+      <h2 class="text-3xl font-semibold text-white md:text-4xl">Des montages pilotés de bout en bout</h2>
+      <p class="max-w-3xl text-base text-zinc-300">
+        Capsules sociales, films de marque, contenus événementiels et verticales optimisées pour TikTok, Instagram, YouTube ou LinkedIn.
+        Chaque section regroupe les formats que je livre le plus régulièrement.
       </p>
     </header>
 
-    <div class="portfolio-sections">
-      <article class="portfolio-section" *ngFor="let section of portfolioSections; let i = index">
-        <header class="portfolio-section__header">
-          <div class="portfolio-section__intro">
-            <p class="portfolio-section__eyebrow">{{ section.title }}</p>
-            <p class="portfolio-section__description">
-              {{ section.description }}
-            </p>
+    <div class="mt-8 space-y-6" role="list">
+      <article
+        *ngFor="let section of portfolioSections; let i = index"
+        class="rounded-2xl border border-white/10 bg-black/30 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur"
+        role="listitem"
+      >
+        <header class="flex flex-col gap-4 border-b border-white/5 pb-4 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.45em] text-fuchsia-200/80">{{ section.title }}</p>
+            <p class="text-sm text-zinc-400">{{ section.description }}</p>
           </div>
           <button
             type="button"
-            class="portfolio-section__toggle"
+            class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-white transition hover:bg-white/10"
             (click)="togglePortfolioSection(section.title)"
             [attr.aria-expanded]="isPortfolioSectionOpen(section.title)"
             [attr.aria-controls]="'portfolio-section-' + i"
           >
-            <span class="sr-only">
-              {{ isPortfolioSectionOpen(section.title) ? 'Masquer' : 'Afficher' }} les projets {{ section.title }}
-            </span>
-            <span aria-hidden="true" class="portfolio-section__toggle-icon"></span>
+            {{ isPortfolioSectionOpen(section.title) ? 'Masquer' : 'Afficher' }}
+            <span class="text-base" aria-hidden="true">{{ isPortfolioSectionOpen(section.title) ? '−' : '+' }}</span>
           </button>
         </header>
 
         <div
-          class="portfolio-section__content"
           [attr.id]="'portfolio-section-' + i"
-          [class.is-open]="isPortfolioSectionOpen(section.title)"
-          [attr.aria-hidden]="!isPortfolioSectionOpen(section.title)"
+          [class.hidden]="!isPortfolioSectionOpen(section.title)"
+          class="mt-6 space-y-6"
         >
-          <div class="reels-grid" role="list">
+          <div class="grid gap-6 lg:grid-cols-2">
             <article
-              class="reel-card"
+              class="group flex flex-col rounded-2xl border border-white/10 bg-zinc-950/70 p-4 shadow-[0_25px_60px_rgba(4,2,13,0.65)]"
               *ngFor="let project of section.projects"
               role="listitem"
-              [style.--reel-accent]="project.accent"
-              [attr.data-aspect]="project.aspectRatio"
               aria-label="Projet {{ project.client }} - {{ project.title }}"
             >
-              <div class="reel-card__header">
-                <span class="reel-card__format">{{ project.type }} · {{ project.location }}</span>
-                <span class="reel-card__year">{{ project.year }}</span>
+              <div class="flex items-center justify-between text-[0.65rem] uppercase tracking-[0.35em] text-zinc-400">
+                <span>{{ project.type }} · {{ project.location }}</span>
+                <span>{{ project.year }}</span>
               </div>
 
               <a
-                class="reel-card__film"
+                class="relative mt-4 block overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-inner transition group-hover:border-fuchsia-400/30"
                 [routerLink]="['/projets', project.slug]"
                 aria-label="Voir le détail du projet {{ project.client }} - {{ project.title }}"
               >
-                <figure class="reel-card__figure">
-                  <div class="reel-card__video-shell" [attr.data-aspect]="project.aspectRatio">
-                    <video
-                      class="reel-card__video"
-                      autoplay
-                      muted
-                      loop
-                      playsinline
-                      preload="metadata"
-                      appAutoplayOnVisible
-                      poster="https://www.marsolliervideo.fr/og-cover.png"
-                      [attr.title]="project.title + ' — ' + project.client"
-                      [attr.aria-label]="project.title + ' — ' + project.client"
-                      [attr.aria-describedby]="'project-' + project.slug + '-caption'"
-                    >
-                      <source [attr.data-src]="project.videoUrl" type="video/mp4" />
-                      Votre navigateur ne supporte pas encore la vidéo HTML5.
-                    </video>
-                  </div>
-                  <figcaption class="reel-card__caption" [attr.id]="'project-' + project.slug + '-caption'">
-                    {{ project.title }} — {{ project.client }}
-                  </figcaption>
-                </figure>
+                <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(217,70,239,0.16),transparent_60%)] opacity-0 transition group-hover:opacity-70"></div>
+                <video
+                  class="aspect-[9/16] w-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  appAutoplayOnVisible
+                  poster="https://www.marsolliervideo.fr/og-cover.png"
+                  [attr.title]="project.title + ' — ' + project.client"
+                  [attr.aria-label]="project.title + ' — ' + project.client"
+                  [attr.aria-describedby]="'project-' + project.slug + '-caption'"
+                >
+                  <source [attr.data-src]="project.videoUrl" type="video/mp4" />
+                  Votre navigateur ne supporte pas encore la vidéo HTML5.
+                </video>
               </a>
 
-              <div class="reel-card__body">
-                <p class="reel-card__client">{{ project.client }}</p>
-                <h3>{{ project.title }}</h3>
-                <p class="reel-card__role">{{ project.role }}</p>
-
-                <div class="reel-card__actions">
-                  <button
-                    type="button"
-                    class="reel-card__details"
-                    [routerLink]="['/projets', project.slug]"
-                  >
-                    Détails
-                  </button>
-                </div>
+              <div class="mt-4 flex flex-col gap-2">
+                <p class="text-xs uppercase tracking-[0.4em] text-zinc-400">{{ project.client }}</p>
+                <h3 class="text-xl font-semibold text-white">{{ project.title }}</h3>
+                <p class="text-sm text-zinc-400">{{ project.role }}</p>
+                <button
+                  type="button"
+                  class="mt-2 inline-flex w-fit items-center justify-center rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.35em] text-white transition hover:bg-white/20"
+                  [routerLink]="['/projets', project.slug]"
+                >
+                  Détails
+                </button>
               </div>
             </article>
           </div>
@@ -168,39 +180,65 @@
     </div>
   </section>
 
+  <section class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]" aria-label="Offre et contact">
+    <article class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Offre dédiée</p>
+      <h2 class="mt-3 text-3xl font-semibold text-white">Besoin d'un monteur vidéo freelance ?</h2>
+      <p class="mt-3 text-base text-zinc-300">
+        Packs motion, suivi Frame.io &amp; Notion, workflow social-first, exports multi-formats et résolution rapide des retours.
+        Découvrez comment j’orchestrerai votre prochain lancement.
+      </p>
+      <a
+        class="mt-6 inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-zinc-950 shadow-sm transition hover:-translate-y-0.5"
+        routerLink="/monteur-video"
+      >
+        Découvrir le service
+      </a>
+    </article>
 
-  <section class="section monteur-cta">
-    <p class="section__eyebrow">Offre dédiée</p>
-    <h2>Besoin d'un <span class="keyword-red">monteur vidéo freelance</span> à Toulouse&nbsp;?</h2>
-    <p>
-      Je propose une page dédiée détaillant mon approche <span class="keyword-red">montage</span>, mes packs et mon workflow. Vous y trouverez les tarifs
-      indicatifs, la méthode Frame.io / Notion et mon profil certifié Malt pour lancer un projet en 48h avec un <span class="keyword-red">monteur
-      vidéo</span> toulousain.
-    </p>
-    <a class="hero__cta" routerLink="/monteur-video">Découvrir la page <span class="keyword-red">monteur vidéo</span></a>
+    <article class="rounded-[2rem] border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_50px_rgba(8,7,16,0.65)] backdrop-blur-2xl" id="contact">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Contact direct</p>
+      <h2 class="mt-3 text-2xl font-semibold text-white">Brief express</h2>
+      <p class="mt-3 text-sm text-zinc-400">
+        Email détaillé, appel pour cadrer ou contrat Malt sécurisé. Réponse sous 24h.
+      </p>
+      <ul class="mt-6 space-y-4 text-base">
+        <li>
+          <a class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition hover:bg-white/10" href="mailto:alexandre.marsollier05@gmail.com">
+            <span class="text-xs uppercase tracking-[0.35em] text-zinc-400">Email</span>
+            alexandre.marsollier05@gmail.com
+          </a>
+        </li>
+        <li>
+          <a class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition hover:bg-white/10" href="tel:+33749867697">
+            <span class="text-xs uppercase tracking-[0.35em] text-zinc-400">Téléphone</span>
+            07&nbsp;49&nbsp;86&nbsp;76&nbsp;97
+          </a>
+        </li>
+        <li>
+          <a
+            class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition hover:bg-white/10"
+            href="https://www.malt.fr/profile/alexandremarsollier"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="text-xs uppercase tracking-[0.35em] text-zinc-400">Malt</span>
+            Profil vérifié
+          </a>
+        </li>
+      </ul>
+    </article>
   </section>
 
-  <section class="section contact" id="contact">
-    <div class="section__header">
-      <p class="section__eyebrow">Contact direct</p>
-    </div>
-    <h2>Contact direct avec <span class="keyword-red">Alexandre Marsollier</span></h2>
-
-    <p>
-      Les contacts sont simples : un email pour détailler votre besoin, un appel pour clarifier le brief ou un lien Malt
-      pour contractualiser en toute sécurité.
-    </p>
-    <ul class="contact__list">
-      <li>
-        <a href="mailto:alexandre.marsollier05@gmail.com">alexandre.marsollier05@gmail.com</a>
-      </li>
-      <li>
-        <a href="tel:+33749867697">07&nbsp;49&nbsp;86&nbsp;76&nbsp;97</a>
-      </li>
-      <li>
-        <a href="https://www.malt.fr/profile/alexandremarsollier" target="_blank" rel="noopener">Profil Malt</a>
-      </li>
-    </ul>
+  <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" aria-label="Questions fréquentes">
+    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">FAQ</p>
+    <h2 class="mt-3 text-3xl font-semibold text-white">Questions récurrentes</h2>
+    <dl class="mt-6 grid gap-5 md:grid-cols-2">
+      <div *ngFor="let faq of faqs" class="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+        <dt class="text-sm uppercase tracking-[0.35em] text-fuchsia-200/80">{{ faq.question }}</dt>
+        <dd class="mt-3 text-base text-zinc-300">{{ faq.answer }}</dd>
+      </div>
+    </dl>
   </section>
 
   <script type="application/ld+json">

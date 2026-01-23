@@ -13,7 +13,6 @@ import {
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
-  styleUrl: './app.css',
 })
 export class App implements AfterViewInit{
   private lastScrollTop = 0;

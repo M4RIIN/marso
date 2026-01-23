@@ -1,43 +1,69 @@
-<header class="site-header" [class.site-header--hidden]="isHeaderHidden">
-  <a class="site-logo" routerLink="/">
-    <img class="site-logo__image" src="assets/logo.png" alt="Logo Alexandre Marsollier" />
-    <span class="site-logo__text"><span class="keyword-red">Alexandre Marsollier</span></span>
-  </a>
-  <nav class="site-nav" aria-label="Navigation principale">
-    <a
-      *ngFor="let item of navItems"
-      routerLinkActive="is-active"
-      [routerLink]="item.path"
-      [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-    >
-      {{ item.label }}
+<header
+  class="fixed inset-x-0 top-0 z-50 px-4 pt-4 transition-all duration-500 ease-out"
+  [class.-translate-y-full]="isHeaderHidden"
+  [class.opacity-0]="isHeaderHidden"
+>
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-zinc-950/80 px-5 py-4 text-xs uppercase tracking-[0.35em] text-zinc-400 shadow-[0_10px_40px_rgba(8,7,16,0.65)] backdrop-blur-2xl">
+    <a routerLink="/" class="flex items-center gap-4 text-left normal-case tracking-normal">
+      <div class="relative">
+        <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400 opacity-40 blur-xl"></div>
+        <img src="assets/logo.png" alt="Logo Alexandre Marsollier" class="relative h-14 w-14 rounded-full border border-white/20 object-contain p-1" />
+      </div>
+      <div>
+        <p class="text-[0.65rem] font-semibold uppercase tracking-[0.6em] text-zinc-400">Alexandre Marsollier</p>
+        <p class="text-base font-semibold text-white">Réalisateur &amp; Monteur vidéo</p>
+      </div>
     </a>
-  </nav>
-  <div class="site-header__actions">
-    <a
-      class="header-cta header-cta--ghost"
-      routerLink="/"
-      fragment="contact"
-    >
-      Contact direct
-    </a>
-    <a
-      class="header-cta"
-      href="https://www.malt.fr/profile/alexandremarsollier"
-      target="_blank"
-      rel="noopener"
-    >
-      Mon profil Malt
-    </a>
+
+    <nav class="flex flex-1 flex-wrap items-center justify-center gap-2 text-[0.65rem] font-semibold tracking-[0.5em]" aria-label="Navigation principale">
+      <a
+        *ngFor="let item of navItems"
+        class="rounded-full border border-transparent px-4 py-2 text-zinc-400 transition hover:border-white/20 hover:text-white"
+        routerLinkActive="border-white/20 bg-white/5 text-white shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+        [routerLink]="item.path"
+        [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2 text-[0.6rem] tracking-[0.45em]">
+      <a
+        class="hidden items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-white transition hover:bg-white/10 sm:inline-flex"
+        routerLink="/"
+        fragment="contact"
+      >
+        Contact direct
+      </a>
+      <a
+        class="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-zinc-950 shadow-sm transition hover:-translate-y-0.5"
+        href="https://www.malt.fr/profile/alexandremarsollier"
+        target="_blank"
+        rel="noopener"
+      >
+        Profil Malt
+      </a>
+    </div>
   </div>
 </header>
 
 <router-outlet></router-outlet>
 
-<footer class="site-footer">
-  <p>© {{ currentYear }} Je suis <span class="keyword-red">Alexandre Marsollier</span> — réalisateur, motion designer &amp; <span class="keyword-red">monteur vidéo</span>.</p>
-  <div class="site-footer__links">
-    <a routerLink="/monteur-video">Besoin de moi comme <span class="keyword-red">monteur vidéo freelance</span>&nbsp;?</a>
-    <a routerLink="/mentions-legales">Mentions légales</a>
+<footer class="mx-4 my-12 text-zinc-300">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_60px_rgba(6,5,17,0.65)] backdrop-blur-2xl md:flex-row md:items-center md:justify-between">
+    <div>
+      <p class="text-xs uppercase tracking-[0.45em] text-zinc-500">© {{ currentYear }} — Toulouse</p>
+      <p class="text-lg font-semibold text-white">
+        Alexandre Marsollier · réalisateur &amp; monteur vidéo freelance
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-3 text-[0.7rem] uppercase tracking-[0.4em]">
+      <a class="rounded-full border border-white/15 px-4 py-2 text-white transition hover:bg-white/10" routerLink="/monteur-video">
+        Monteur vidéo
+      </a>
+      <a class="rounded-full border border-white/15 px-4 py-2 text-white transition hover:bg-white/10" routerLink="/mentions-legales">
+        Mentions légales
+      </a>
+    </div>
   </div>
 </footer>

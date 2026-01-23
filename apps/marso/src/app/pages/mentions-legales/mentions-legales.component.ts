@@ -17,7 +17,6 @@ interface LegalContactItem {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './mentions-legales.component.html',
-  styleUrl: './mentions-legales.component.css',
 })
 export class MentionsLegalesComponent implements OnInit, OnDestroy {
   protected readonly lastUpdated = new Intl.DateTimeFormat('fr-FR', {

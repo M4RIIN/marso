@@ -1,27 +1,28 @@
-<main class="legal-page">
-  <section class="legal-page__intro">
-    <p class="legal-page__eyebrow">Informations légales</p>
-    <h1>Mentions légales</h1>
-    <p>
-      Ce site est édité par <span class="keyword-red">Alexandre Marsollier</span>, <span class="keyword-red">monteur vidéo freelance</span> et motion designer à Toulouse.
-      Vous trouverez ci-dessous les informations légales relatives à l’identité de l’éditeur, à l’hébergement,
-      à la protection des contenus et à l’usage des données collectées via marsolliervideo.fr.
+<main class="mx-auto mt-32 max-w-5xl space-y-8 px-4 pb-20 text-zinc-100">
+  <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Informations légales</p>
+    <h1 class="mt-4 text-4xl font-semibold">Mentions légales</h1>
+    <p class="mt-4 text-base text-zinc-300">
+      Ce site est édité par Alexandre Marsollier, monteur vidéo freelance et motion designer à Toulouse. Vous trouverez ci-dessous toutes les informations sur l’éditeur, l’hébergement, la propriété intellectuelle et la gestion des données.
     </p>
-    <p class="legal-page__date">Dernière mise à jour : {{ lastUpdated }}</p>
+    <p class="mt-3 text-xs uppercase tracking-[0.45em] text-zinc-500">
+      Dernière mise à jour : {{ lastUpdated }}
+    </p>
   </section>
 
-  <section class="legal-card">
-    <h2>Éditeur &amp; responsable de publication</h2>
-    <dl>
+  <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+    <h2 class="text-2xl font-semibold">Éditeur &amp; responsable de publication</h2>
+    <dl class="mt-4 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 md:grid-cols-2">
       <ng-container *ngFor="let item of contactItems">
-        <dt>{{ item.label }}</dt>
-        <dd>
+        <dt class="text-xs uppercase tracking-[0.35em] text-fuchsia-200/80">{{ item.label }}</dt>
+        <dd class="text-base text-zinc-300">
           <ng-container [ngSwitch]="!!item.href">
             <a
               *ngSwitchCase="true"
               [href]="item.href"
               [attr.target]="item.external ? '_blank' : null"
               [attr.rel]="item.external ? 'noopener noreferrer' : null"
+              class="text-white underline-offset-4 hover:underline"
             >
               {{ item.value }}
             </a>
@@ -32,61 +33,53 @@
     </dl>
   </section>
 
-  <section class="legal-card">
-    <h2>Hébergement</h2>
-    <p>
-      Le site marsolliervideo.fr est hébergé par GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr St, San Francisco,
-      CA 94107, États-Unis. Les serveurs sont supervisés par les équipes de GitHub et bénéficient d’un suivi
-      opérationnel continu.
-    </p>
-    <p>
-      Support :
-      <a href="https://support.github.com" target="_blank" rel="noopener noreferrer">support.github.com</a>
+  <section class="grid gap-6 md:grid-cols-2">
+    <article class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+      <h2 class="text-xl font-semibold">Hébergement</h2>
+      <p class="mt-3 text-sm text-zinc-300">
+        Le site marsolliervideo.fr est hébergé par GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis. Les serveurs sont supervisés par les équipes GitHub et bénéficient d’un suivi continu.
+      </p>
+      <p class="mt-3 text-sm text-zinc-300">
+        Support : <a href="https://support.github.com" target="_blank" rel="noopener noreferrer" class="text-white underline-offset-4 hover:underline">support.github.com</a>
+      </p>
+    </article>
+
+    <article class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+      <h2 class="text-xl font-semibold">Responsabilité</h2>
+      <p class="mt-3 text-sm text-zinc-300">
+        Malgré les vérifications effectuées, des erreurs peuvent subsister. Alexandre Marsollier ne saurait être tenu responsable des dommages liés à la consultation du site ou à l’usage des informations publiées. Les liens externes sont fournis à titre informatif.
+      </p>
+    </article>
+  </section>
+
+  <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-8 text-zinc-300 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+    <h2 class="text-2xl font-semibold text-white">Propriété intellectuelle</h2>
+    <p class="mt-4 text-base">
+      L’ensemble des contenus (textes, vidéos, graphismes, code) est protégé par la législation française et internationale. Toute reproduction ou adaptation nécessite l’autorisation écrite préalable d’Alexandre Marsollier.
     </p>
   </section>
 
-  <section class="legal-card">
-    <h2>Propriété intellectuelle</h2>
-    <p>
-      L’ensemble des contenus présents sur le site (textes, vidéos, éléments graphiques, identité visuelle et code) est
-      protégé par la législation française et internationale relative à la propriété intellectuelle.
-      Toute reproduction, représentation ou adaptation partielle ou totale, sur tout support, nécessite l’autorisation
-      écrite préalable d’<span class="keyword-red">Alexandre Marsollier</span>.
+  <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-8 text-zinc-300 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+    <h2 class="text-2xl font-semibold text-white">Données personnelles &amp; cookies</h2>
+    <p class="mt-4 text-base">
+      Aucune donnée n’est collectée automatiquement en dehors des statistiques anonymisées liées à l’hébergement. Les informations envoyées volontairement sont utilisées uniquement pour répondre aux demandes.
     </p>
-  </section>
-
-  <section class="legal-card">
-    <h2>Données personnelles &amp; cookies</h2>
-    <p>
-      Aucune donnée n’est collectée automatiquement en dehors des statistiques anonymisées fournies par les outils
-      d’hébergement. Les informations envoyées volontairement (email, téléphone, message) servent uniquement à répondre
-      aux demandes des clients et prospects.
-    </p>
-    <ul>
-      <li>Les échanges sont conservés pour la durée strictement nécessaire au suivi des projets.</li>
-      <li>Aucune donnée n’est vendue ni cédée à des tiers.</li>
-      <li>Vous disposez d’un droit d’accès, de rectification et de suppression en écrivant à l’adresse email ci-dessus.</li>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-sm">
+      <li>Conservation limitée à la durée des projets.</li>
+      <li>Aucune vente ou cession de données.</li>
+      <li>Droit d’accès, de rectification et de suppression via l’email indiqué.</li>
     </ul>
-    <p>Le site n’implémente pas de cookies publicitaires ni de pixels tiers.</p>
-  </section>
-
-  <section class="legal-card">
-    <h2>Responsabilité</h2>
-    <p>
-      Malgré les vérifications apportées, des erreurs ou omissions peuvent subsister sur le site. <span class="keyword-red">Alexandre Marsollier</span> ne
-      saurait être tenu responsable des dommages directs ou indirects résultant de la consultation du site ou de
-      l’utilisation des informations publiées. Les liens externes sont fournis à titre informatif et n’engagent pas la
-      responsabilité de l’éditeur.
+    <p class="mt-3 text-sm">
+      Aucun cookie publicitaire ni pixel tiers n’est utilisé.
     </p>
   </section>
 
-  <section class="legal-card">
-    <h2>Contact</h2>
-    <p>
-      Pour toute question relative aux mentions légales, à la protection des données ou pour signaler un contenu,
-      contactez-moi à l’adresse
-      <a href="mailto:alexandre.marsollier05@gmail.com">alexandre.marsollier05@gmail.com</a>
-      ou par téléphone au <a href="tel:+33749867697">07&nbsp;49&nbsp;86&nbsp;76&nbsp;97</a>.
+  <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-8 text-zinc-300 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+    <h2 class="text-2xl font-semibold text-white">Contact</h2>
+    <p class="mt-4 text-base">
+      Pour toute question relative aux mentions légales, à la protection des données ou pour signaler un contenu, contactez-moi à l’adresse
+      <a href="mailto:alexandre.marsollier05@gmail.com" class="text-white underline-offset-4 hover:underline">alexandre.marsollier05@gmail.com</a>
+      ou par téléphone au <a href="tel:+33749867697" class="text-white underline-offset-4 hover:underline">07&nbsp;49&nbsp;86&nbsp;76&nbsp;97</a>.
     </p>
   </section>
 </main>

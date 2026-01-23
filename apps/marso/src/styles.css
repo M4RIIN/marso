@@ -1,47 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Playball&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root {
-  color-scheme: light;
-  --brand-red: #8c0f01;
-  --brand-red-deep: #5b0900;
-  --brand-white: #fffaf5;
-  --brand-white-strong: #ffffff;
-  --brand-ink: #1c0303;
-  --brand-blue: #405E70;
-  --brand-blue-bright: #5f89a3;
-  --brand-shadow: rgba(28, 3, 3, 0.25);
-  --brand-grid: rgba(255, 255, 255, 0.12);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--brand-red);
-  color: var(--brand-white);
-  font-family: 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-a {
-  color: inherit;
-}
+  html {
+    @apply scroll-smooth;
+  }
 
-img,
-video {
-  max-width: 100%;
-  display: block;
-}
+  body {
+    @apply m-0 min-h-screen bg-zinc-950 font-sans text-zinc-100 antialiased;
+    background-color: #06060f;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(244, 114, 182, 0.12), transparent 55%),
+      radial-gradient(circle at 80% 5%, rgba(6, 182, 212, 0.12), transparent 55%),
+      radial-gradient(circle at 10% 80%, rgba(14, 165, 233, 0.08), transparent 60%),
+      linear-gradient(120deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(60deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size:
+      640px 640px,
+      720px 720px,
+      780px 780px,
+      160px 160px,
+      160px 160px;
+    background-attachment: fixed;
+    line-height: 1.7;
+  }
 
-.keyword-red {
-  color: inherit;
-  font-weight: 700;
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(244, 114, 182, 0.12), transparent 45%),
+      linear-gradient(135deg, rgba(4, 6, 18, 0.82), rgba(6, 6, 18, 0.94));
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  img,
+  video {
+    @apply block max-w-full;
+  }
+
+  ::selection {
+    @apply bg-fuchsia-500/60 text-white;
+  }
 }
