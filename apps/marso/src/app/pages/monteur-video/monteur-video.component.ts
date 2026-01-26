@@ -98,6 +98,8 @@ export class MonteurVideoComponent implements OnInit, OnDestroy {
         'monteur vidéo Toulouse',
         'freelance montage vidéo',
         'motion design',
+        'motion designer',
+        'freelance',
         'post-production',
         'Alternant audiovisuel',
       ],

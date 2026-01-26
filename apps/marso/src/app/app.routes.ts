@@ -17,7 +17,7 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Alexandre Marsollier · Monteur vidéo, Réalisateur, motion designer',
+    title: 'Alexandre Marsollier · Monteur vidéo freelance, réalisateur & motion designer',
   },
   {
     path: 'monteur-video',

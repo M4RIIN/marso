@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seo.updateTags({
-      title: 'Alexandre Marsollier · Monteur vidéo, réalisateur & motion designer à Toulouse',
+      title: 'Alexandre Marsollier · Monteur vidéo freelance & motion designer à Toulouse',
       description:
         'Alexandre Marsollier, monteur vidéo freelance et motion designer à Toulouse : montage premium, films de marque et contenus social media pour entreprises, startups et associations.',
       keywords: [
@@ -56,6 +56,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         'monteur vidéo freelance',
         'monteur vidéo Toulouse',
         'motion designer Toulouse',
+        'motion designer freelance',
+        'freelance',
         'post production',
         'réalisateur freelance',
       ],
