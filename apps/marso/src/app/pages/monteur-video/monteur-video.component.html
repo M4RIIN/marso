@@ -1,38 +1,63 @@
-<main class="mx-auto mt-32 flex max-w-5xl flex-col gap-10 px-4 pb-20 text-zinc-100">
-  <section class="rounded-[2.5rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl md:px-12" aria-label="Présentation du monteur vidéo">
-    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">À propos</p>
-    <h1 class="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-      Monteur vidéo freelance &amp; alternant chargé d’audiovisuel
-    </h1>
-    <div class="mt-5 space-y-4 text-lg text-zinc-300">
-      <p *ngFor="let paragraph of heroParagraphs">{{ paragraph }}</p>
-    </div>
-    <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.45em]">
-      <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="mailto:alexandre.marsollier05@gmail.com">
-        Parler du projet
-      </a>
-      <a class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10" routerLink="/" [fragment]="'projets'">
-        Voir le portfolio
-      </a>
+<main class="mx-auto mt-32 flex max-w-6xl flex-col gap-10 px-4 pb-20 text-zinc-100">
+  <section class="rounded-[2.5rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl md:px-12" aria-label="Présentation du monteur vidéo freelance">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+      <div>
+        <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Service de montage vidéo</p>
+        <h1 class="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">
+          Monteur vidéo freelance pour entreprises, marques et contenus social media
+        </h1>
+        <div class="mt-5 space-y-4 text-lg text-zinc-300">
+          <p *ngFor="let paragraph of heroParagraphs">{{ paragraph }}</p>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.35em]">
+          <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="mailto:alexandre.marsollier05@gmail.com">
+            Parler du projet
+          </a>
+          <a class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10" routerLink="/" [fragment]="'projets'">
+            Voir le portfolio
+          </a>
+        </div>
+      </div>
+
+      <aside class="rounded-[2rem] border border-white/10 bg-zinc-950/70 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.05)]">
+        <p class="text-xs uppercase tracking-[0.45em] text-zinc-500">Compétences clés</p>
+        <dl class="mt-5 space-y-4">
+          <div *ngFor="let point of proofPoints" class="rounded-2xl border border-white/10 bg-black/30 px-4 py-4">
+            <dt class="text-base font-semibold text-white">{{ point.value }}</dt>
+            <dd class="mt-2 text-sm text-zinc-400">{{ point.label }}</dd>
+          </div>
+        </dl>
+      </aside>
     </div>
   </section>
 
   <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="prestations">
     <div class="flex flex-col gap-3 border-b border-white/5 pb-6">
       <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Prestations</p>
-      <h2 class="text-3xl font-semibold">Services de montage vidéo</h2>
-      <p class="text-zinc-300">
-        De l’idée au rendu final : je sécurise la narration, l’habillage et les exports, quel que soit le canal de diffusion.
+      <h2 class="text-3xl font-semibold">Services de montage vidéo freelance</h2>
+      <p class="max-w-3xl text-zinc-300">
+        De l’idée au rendu final : je sécurise la narration, l’habillage, le rythme, le son et les exports, quel que soit le canal de diffusion.
       </p>
     </div>
-    <ul class="mt-6 grid gap-4 md:grid-cols-2">
+    <ul class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <li
         *ngFor="let item of prestations"
-        class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-semibold uppercase tracking-[0.35em] text-white"
+        class="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white"
       >
         {{ item }}
       </li>
     </ul>
+  </section>
+
+  <section class="grid gap-6 lg:grid-cols-3" id="besoins" aria-label="Besoins de montage vidéo">
+    <article
+      *ngFor="let useCase of serviceUseCases"
+      class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl"
+    >
+      <p class="text-xs uppercase tracking-[0.45em] text-fuchsia-200/80">Besoin</p>
+      <h2 class="mt-3 text-2xl font-semibold text-white">{{ useCase.title }}</h2>
+      <p class="mt-3 text-base text-zinc-300">{{ useCase.detail }}</p>
+    </article>
   </section>
 
   <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]" id="methode">
@@ -41,7 +66,7 @@
         <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Méthode</p>
         <h2 class="text-3xl font-semibold">Process documenté</h2>
         <p class="text-zinc-300">
-          Sessions supervisées à Toulouse ou à distance, avec étapes claires et retours tracés.
+          Sessions supervisées à Toulouse ou à distance, avec étapes claires, retours tracés et livrables organisés.
         </p>
       </div>
       <ol class="mt-6 space-y-4">
@@ -49,28 +74,86 @@
           *ngFor="let step of methodSteps"
           class="rounded-2xl border border-white/10 bg-black/30 px-5 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
         >
-          <span class="text-xs uppercase tracking-[0.45em] text-fuchsia-200/80">{{ step.title }}</span>
+          <span class="text-xs uppercase tracking-[0.35em] text-fuchsia-200/80">{{ step.title }}</span>
           <p class="mt-2 text-base text-zinc-300">{{ step.detail }}</p>
         </li>
       </ol>
     </div>
 
-    <div class="rounded-[2rem] border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
-      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Outils</p>
-      <h2 class="mt-3 text-2xl font-semibold">Stack créative</h2>
-      <p class="mt-3 text-sm text-zinc-400">{{ skillsSummary }}</p>
-      <ul class="mt-6 space-y-3">
-        <li *ngFor="let skill of skills" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/90">
-          {{ skill }}
-        </li>
-      </ul>
+    <div class="space-y-6">
+      <div class="rounded-[2rem] border border-white/10 bg-zinc-950/70 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+        <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Outils</p>
+        <h2 class="mt-3 text-2xl font-semibold">Stack créative</h2>
+        <p class="mt-3 text-sm text-zinc-400">{{ skillsSummary }}</p>
+        <ul class="mt-6 space-y-3">
+          <li *ngFor="let skill of skills" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/90">
+            {{ skill }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-[2rem] border border-white/10 bg-white/5 px-6 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl">
+        <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Livrables</p>
+        <h2 class="mt-3 text-2xl font-semibold">Exports prêts à publier</h2>
+        <ul class="mt-5 space-y-3 text-sm text-zinc-300">
+          <li *ngFor="let deliverable of deliverables" class="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
+            {{ deliverable }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="rounded-[2.25rem] border border-white/10 bg-zinc-950/70 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="exemples">
+    <div class="flex flex-col gap-3 border-b border-white/5 pb-6">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Preuves</p>
+      <h2 class="text-3xl font-semibold">Exemples de montages vidéo réalisés</h2>
+      <p class="max-w-3xl text-zinc-300">
+        Quelques projets montrent les formats les plus fréquents : film de marque, interview, événement, social media et motion design.
+      </p>
+    </div>
+    <div class="mt-6 grid gap-5 md:grid-cols-2">
+      <a
+        *ngFor="let project of featuredProjects"
+        class="group rounded-2xl border border-white/10 bg-black/30 p-5 transition hover:border-fuchsia-300/40 hover:bg-white/10"
+        [routerLink]="['/projets', project.slug]"
+      >
+        <p class="text-xs uppercase tracking-[0.35em] text-zinc-500">{{ project.type }} · {{ project.location }}</p>
+        <h3 class="mt-3 text-xl font-semibold text-white">{{ project.title }}</h3>
+        <p class="text-sm uppercase tracking-[0.3em] text-fuchsia-200/80">{{ project.client }}</p>
+        <p class="mt-3 text-sm text-zinc-300">{{ project.summary }}</p>
+        <span class="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.35em] text-white transition group-hover:text-fuchsia-100">
+          Voir le projet
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="offres">
+    <div class="flex flex-col gap-3 border-b border-white/5 pb-6">
+      <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Formats de mission</p>
+      <h2 class="text-3xl font-semibold">Repères pour cadrer un montage vidéo</h2>
+      <p class="max-w-3xl text-zinc-300">
+        Chaque mission est chiffrée selon les rushs, le nombre d’allers-retours, les versions attendues et le niveau de motion design.
+      </p>
+    </div>
+    <div class="mt-6 grid gap-5 lg:grid-cols-3">
+      <article *ngFor="let offer of packageOffers" class="rounded-2xl border border-white/10 bg-zinc-950/70 p-5">
+        <h3 class="text-xl font-semibold text-white">{{ offer.title }}</h3>
+        <p class="mt-3 text-sm text-zinc-400">{{ offer.detail }}</p>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+          <li *ngFor="let item of offer.items" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            {{ item }}
+          </li>
+        </ul>
+      </article>
     </div>
   </section>
 
   <section class="rounded-[2.25rem] border border-white/10 bg-white/5 px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" id="faq" itemscope itemtype="https://schema.org/FAQPage">
     <div class="flex flex-col gap-2 border-b border-white/5 pb-4">
       <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">FAQ</p>
-      <h2 class="text-3xl font-semibold">Questions fréquentes</h2>
+      <h2 class="text-3xl font-semibold">Questions fréquentes sur le montage vidéo freelance</h2>
     </div>
     <dl class="mt-6 grid gap-5 md:grid-cols-2">
       <div
@@ -80,7 +163,7 @@
         itemtype="https://schema.org/Question"
         class="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
       >
-        <dt class="text-sm uppercase tracking-[0.35em] text-fuchsia-200/80" itemprop="name">{{ faq.question }}</dt>
+        <dt class="text-sm uppercase tracking-[0.24em] text-fuchsia-200/80" itemprop="name">{{ faq.question }}</dt>
         <dd class="mt-3 text-base text-zinc-300" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
           <p itemprop="text">{{ faq.answer }}</p>
         </dd>
@@ -88,13 +171,13 @@
     </dl>
   </section>
 
-  <section class="rounded-[2.5rem] border border-white/10 bg-zinc-950/70 px-6 py-10 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" aria-label="Prêt à lancer un projet">
-    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Prêt à lancer un projet&nbsp;?</p>
-    <h2 class="mt-4 text-3xl font-semibold">Brief détaillé, moodboard ou simple intention&nbsp;?</h2>
-    <p class="mt-3 text-base text-zinc-300">
-      Envoyez vos rushs, planches ou objectifs : je vous réponds sous 48h avec un plan de montage, un devis Malt et un timeline de livraison.
+  <section class="rounded-[2.5rem] border border-white/10 bg-zinc-950/70 px-6 py-10 text-zinc-100 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] backdrop-blur-2xl" aria-label="Prêt à lancer un projet de montage vidéo">
+    <p class="text-xs uppercase tracking-[0.6em] text-zinc-400">Brief montage vidéo</p>
+    <h2 class="mt-4 text-3xl font-semibold">Vous cherchez un monteur vidéo freelance disponible ?</h2>
+    <p class="mt-3 max-w-3xl text-base text-zinc-300">
+      Envoyez vos rushs, références, objectifs ou contraintes de diffusion : je vous réponds sous 48h avec une méthode, un planning et un devis adapté.
     </p>
-    <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.45em]">
+    <div class="mt-6 flex flex-wrap gap-3 text-[0.65rem] uppercase tracking-[0.35em]">
       <a class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 shadow-sm transition hover:-translate-y-0.5" href="mailto:alexandre.marsollier05@gmail.com">
         Envoyer un brief
       </a>

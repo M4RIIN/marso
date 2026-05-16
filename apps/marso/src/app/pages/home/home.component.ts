@@ -48,9 +48,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.seo.updateTags({
-      title: 'Alexandre Marsollier · Monteur vidéo freelance & motion designer à Toulouse',
+      title: 'Alexandre Marsollier · Monteur vidéo freelance & motion designer',
       description:
-        'Alexandre Marsollier, monteur vidéo freelance et motion designer à Toulouse : montage premium, films de marque et contenus social media pour entreprises, startups et associations.',
+        'Alexandre Marsollier, monteur vidéo freelance et motion designer basé à Toulouse : montage corporate, films de marque et contenus social media partout en France.',
       keywords: [
         'monteur vidéo',
         'monteur vidéo freelance',
@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.seo.setJsonLd('home-reels', this.buildVideoStructuredData());
+    this.seo.setJsonLd('home-faq', this.buildFaqStructuredData());
   }
 
   ngOnDestroy(): void {
@@ -114,7 +115,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         description: reel.summary,
         uploadDate: `${reel.year}-01-01`,
         inLanguage: 'fr-FR',
-        url: `${SITE_URL}/projets/${reel.slug}/`,
+        url: `${SITE_URL}/projets/${reel.slug}`,
         contentUrl: reel.videoUrl,
         embedUrl: reel.videoUrl,
         thumbnailUrl: `${SITE_URL}/assets/alexandre_marsollier_monteur_video.png`,
@@ -126,6 +127,21 @@ export class HomeComponent implements OnInit, OnDestroy {
         },
         keywords: reel.tags.join(', '),
         genre: reel.tags,
+      })),
+    };
+  }
+
+  private buildFaqStructuredData() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: this.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
       })),
     };
   }

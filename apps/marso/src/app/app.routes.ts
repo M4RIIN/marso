@@ -22,7 +22,7 @@ export const appRoutes: Route[] = [
   {
     path: 'monteur-video',
     component: MonteurVideoComponent,
-    title: 'Monteur vidéo freelance à Toulouse — Alexandre Marsollier',
+    title: 'Monteur vidéo freelance | Alexandre Marsollier',
   },
   {
     path: 'mentions-legales',

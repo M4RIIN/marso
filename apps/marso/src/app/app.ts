@@ -1,12 +1,12 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import {AfterViewInit, Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import {
-  ConsoleEffect, ConsoleEffectActionHandler,
+  ConsoleEffectActionHandler,
   EasterBuilder,
   KonamiTrigger,
   MatrixEffectActionHandler,
-} from "easter-eggs.ts";
+} from 'easter-eggs.ts';
 
 @Component({
   standalone: true,
@@ -14,29 +14,27 @@ import {
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
 })
-export class App implements AfterViewInit{
+export class App implements AfterViewInit {
   private lastScrollTop = 0;
   private readonly scrollThreshold = 48;
   private readonly isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) platformId: object) {
     this.isBrowser = isPlatformBrowser(platformId);
-
-
   }
 
   ngAfterViewInit(): void {
     new EasterBuilder()
       .setTriggerHandler(new KonamiTrigger()) // up, up, down, down...
       .setActionHandler(
-        new ConsoleEffectActionHandler("marso")
+        new ConsoleEffectActionHandler('marso')
           .setActionHandler(new MatrixEffectActionHandler())
       );
-    }
+  }
 
   protected readonly navItems = [
     { label: 'Portfolio', path: '/' },
-    { label: 'Besoin d\'un monteur?', path: '/monteur-video' },
+    { label: 'Monteur vidéo', path: '/monteur-video' },
   ];
   protected readonly currentYear = new Date().getFullYear();
   protected isHeaderHidden = false;
